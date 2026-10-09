@@ -1,0 +1,60 @@
+{
+  "destinations": [
+    {
+      "id": "lisbon",
+      "name": "Lisbon",
+      "country": "Portugal",
+      "country_code": "PRT",
+      "lat": 38.7223,
+      "lng": -9.1393,
+      "tags": [
+        "food",
+        "culture",
+        "nightlife"
+      ],
+      "image_url": null
+    },
+    {
+      "id": "kyoto",
+      "name": "Kyoto",
+      "country": "Japan",
+      "country_code": "JPN",
+      "lat": 35.0116,
+      "lng": 135.7681,
+      "tags": [
+        "food",
+        "culture",
+        "nature"
+      ],
+      "image_url": null
+    },
+    {
+      "id": "cancun",
+      "name": "Cancún",
+      "country": "Mexico",
+      "country_code": "MEX",
+      "lat": 21.1619,
+      "lng": -86.8515,
+      "tags": [
+        "beaches",
+        "food",
+        "nightlife"
+      ],
+      "image_url": null
+    },
+    {
+      "id": "reykjavik",
+      "name": "Reykjavík",
+      "country": "Iceland",
+      "country_code": "ISL",
+      "lat": 64.1466,
+      "lng": -21.9426,
+      "tags": [
+        "nature",
+        "adventure",
+        "culture"
+      ],
+      "image_url": null
+    }
+  ]
+}

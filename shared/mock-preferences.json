@@ -1,0 +1,12 @@
+{
+  "origin_city": null,
+  "budget_usd": 1500,
+  "budget_scope": "excluding_flights",
+  "duration_days": 5,
+  "travel_month": 12,
+  "interests": [
+    "beaches",
+    "food"
+  ],
+  "climate": "warm"
+}

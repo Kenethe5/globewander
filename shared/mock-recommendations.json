@@ -1,0 +1,76 @@
+{
+  "results": [
+    {
+      "destination_id": "cancun",
+      "score": 91,
+      "eligible": true,
+      "breakdown": {
+        "interests": 95,
+        "climate": 85,
+        "affordability": null
+      },
+      "budget_status": "unverified",
+      "estimated_onsite_total_usd": null,
+      "reasons": [
+        "Illustrative match on beaches and food"
+      ],
+      "tradeoffs": [
+        "Sample score only; prices have not been verified"
+      ]
+    },
+    {
+      "destination_id": "lisbon",
+      "score": 77,
+      "eligible": true,
+      "breakdown": {
+        "interests": 85,
+        "climate": 65,
+        "affordability": null
+      },
+      "budget_status": "unverified",
+      "estimated_onsite_total_usd": null,
+      "reasons": [
+        "Illustrative match on food and city culture"
+      ],
+      "tradeoffs": [
+        "Sample score only; prices have not been verified"
+      ]
+    },
+    {
+      "destination_id": "kyoto",
+      "score": 49,
+      "eligible": true,
+      "breakdown": {
+        "interests": 55,
+        "climate": 40,
+        "affordability": null
+      },
+      "budget_status": "unverified",
+      "estimated_onsite_total_usd": null,
+      "reasons": [
+        "Illustrative match for cultural activities"
+      ],
+      "tradeoffs": [
+        "Sample score only; prices have not been verified"
+      ]
+    },
+    {
+      "destination_id": "reykjavik",
+      "score": 21,
+      "eligible": true,
+      "breakdown": {
+        "interests": 25,
+        "climate": 15,
+        "affordability": null
+      },
+      "budget_status": "unverified",
+      "estimated_onsite_total_usd": null,
+      "reasons": [
+        "Illustrative nature/adventure fit"
+      ],
+      "tradeoffs": [
+        "Sample score only; prices have not been verified"
+      ]
+    }
+  ]
+}
