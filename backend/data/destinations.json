@@ -1,0 +1,802 @@
+[
+  {
+    "id": "lisbon",
+    "name": "Lisbon",
+    "country": "Portugal",
+    "country_code": "PRT",
+    "lat": 38.73,
+    "lng": -9.15,
+    "tags": [
+      "food",
+      "culture",
+      "nightlife"
+    ],
+    "image_url": null,
+    "highlights": [
+      "Belém Tower on the Tagus waterfront.",
+      "Jerónimos Monastery in the Belém district."
+    ],
+    "monthly_avg_temp_c": [
+      12,
+      12,
+      14,
+      16,
+      18,
+      21,
+      23,
+      23,
+      22,
+      19,
+      14,
+      12
+    ],
+    "lodging_per_night_usd": null,
+    "daily_ex_lodging_usd": null,
+    "climate_source_url": "https://www.timeanddate.com/weather/portugal/lisbon/climate",
+    "climate_checked_at": "2026-10-10",
+    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "_provenance": {
+      "checked_at": "2026-10-10",
+      "coordinate_source_url": "https://www.timeanddate.com/worldclock/portugal/lisbon",
+      "coordinate_note": "Representative city marker, rounded to two decimal degrees from source coordinates in degrees and minutes.",
+      "highlight_source_urls": [
+        "https://www.visitlisboa.com/pt-pt/locais/torre-de-belem",
+        "https://www.visitportugal.com/sites/default/files/Lisbon_AWholeWorldtoExplore.pdf"
+      ],
+      "tag_note": "Editorial discovery categories, not measured suitability scores.",
+      "climate_station": "Lisbon Portela Airport",
+      "climate_period": "1992–2021",
+      "climate_note": "Historical monthly means, January through December; not a forecast. Airport station conditions may differ from the city center. Source averaging periods differ across cities.",
+      "source_temperature_unit": "F",
+      "source_monthly_mean_temperatures": [
+        53,
+        54,
+        58,
+        60,
+        65,
+        70,
+        73,
+        74,
+        71,
+        66,
+        58,
+        54
+      ],
+      "temperature_precision_note": "Whole Fahrenheit source values converted to whole Celsius to avoid false precision.",
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+    }
+  },
+  {
+    "id": "kyoto",
+    "name": "Kyoto",
+    "country": "Japan",
+    "country_code": "JPN",
+    "lat": 35.02,
+    "lng": 135.77,
+    "tags": [
+      "food",
+      "culture",
+      "nature"
+    ],
+    "image_url": null,
+    "highlights": [
+      "Fushimi Inari Taisha shrine and its vermilion gates.",
+      "Kiyomizu-dera temple overlooking Kyoto."
+    ],
+    "monthly_avg_temp_c": [
+      4.8,
+      5.4,
+      8.8,
+      14.4,
+      19.5,
+      23.3,
+      27.3,
+      28.5,
+      24.4,
+      18.4,
+      12.5,
+      7.2
+    ],
+    "lodging_per_night_usd": null,
+    "daily_ex_lodging_usd": null,
+    "climate_source_url": "https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_ym.php?prec_no=61&block_no=47759&year=&month=&day=&view=",
+    "climate_checked_at": "2026-10-10",
+    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "_provenance": {
+      "checked_at": "2026-10-10",
+      "coordinate_source_url": "https://www.timeanddate.com/worldclock/japan/kyoto",
+      "coordinate_note": "Representative city marker, rounded to two decimal degrees from source coordinates in degrees and minutes.",
+      "highlight_source_urls": [
+        "https://kyoto.travel/en/areas/fushimi/",
+        "https://www.kiyomizudera.or.jp/en/visit/"
+      ],
+      "tag_note": "Editorial discovery categories, not measured suitability scores.",
+      "climate_station": "Kyoto, WMO station 47759",
+      "climate_period": "1991–2020",
+      "climate_note": "Historical monthly means, January through December; not a forecast. Airport station conditions may differ from the city center. Source averaging periods differ across cities.",
+      "source_temperature_unit": "C",
+      "source_monthly_mean_temperatures": [
+        4.8,
+        5.4,
+        8.8,
+        14.4,
+        19.5,
+        23.3,
+        27.3,
+        28.5,
+        24.4,
+        18.4,
+        12.5,
+        7.2
+      ],
+      "temperature_precision_note": "Celsius values retained at source precision.",
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+    }
+  },
+  {
+    "id": "cancun",
+    "name": "Cancún",
+    "country": "Mexico",
+    "country_code": "MEX",
+    "lat": 21.17,
+    "lng": -86.85,
+    "tags": [
+      "beaches",
+      "food",
+      "nightlife"
+    ],
+    "image_url": null,
+    "highlights": [
+      "Playa Delfines in the Hotel Zone.",
+      "Chac Mool public beach on Kukulkán Boulevard."
+    ],
+    "monthly_avg_temp_c": [
+      23,
+      24,
+      24,
+      26,
+      28,
+      28,
+      28,
+      28,
+      28,
+      27,
+      24,
+      23
+    ],
+    "lodging_per_night_usd": null,
+    "daily_ex_lodging_usd": null,
+    "climate_source_url": "https://www.timeanddate.com/weather/mexico/cancun/climate",
+    "climate_checked_at": "2026-10-10",
+    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "_provenance": {
+      "checked_at": "2026-10-10",
+      "coordinate_source_url": "https://www.timeanddate.com/worldclock/mexico/cancun",
+      "coordinate_note": "Representative city marker, rounded to two decimal degrees from source coordinates in degrees and minutes.",
+      "highlight_source_urls": [
+        "https://www.turismocancun.mx/el-ni%C3%B1o-1-1-1-1",
+        "https://www.turismocancun.mx/en/el-ni%C3%B1o-1-1"
+      ],
+      "tag_note": "Editorial discovery categories, not measured suitability scores.",
+      "climate_station": "Cancun International Airport",
+      "climate_period": "1992–2021",
+      "climate_note": "Historical monthly means, January through December; not a forecast. Airport station conditions may differ from the city center. Source averaging periods differ across cities.",
+      "source_temperature_unit": "F",
+      "source_monthly_mean_temperatures": [
+        73,
+        75,
+        76,
+        79,
+        82,
+        82,
+        83,
+        83,
+        82,
+        80,
+        76,
+        74
+      ],
+      "temperature_precision_note": "Whole Fahrenheit source values converted to whole Celsius to avoid false precision.",
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+    }
+  },
+  {
+    "id": "reykjavik",
+    "name": "Reykjavík",
+    "country": "Iceland",
+    "country_code": "ISL",
+    "lat": 64.15,
+    "lng": -21.95,
+    "tags": [
+      "nature",
+      "adventure",
+      "culture"
+    ],
+    "image_url": null,
+    "highlights": [
+      "Harpa concert hall on the downtown waterfront.",
+      "Hallgrímskirkja church in central Reykjavík."
+    ],
+    "monthly_avg_temp_c": [
+      1,
+      1,
+      2,
+      4,
+      7,
+      10,
+      12,
+      11,
+      9,
+      5,
+      2,
+      1
+    ],
+    "lodging_per_night_usd": null,
+    "daily_ex_lodging_usd": null,
+    "climate_source_url": "https://www.timeanddate.com/weather/iceland/reykjavik/climate",
+    "climate_checked_at": "2026-10-10",
+    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "_provenance": {
+      "checked_at": "2026-10-10",
+      "coordinate_source_url": "https://www.timeanddate.com/worldclock/iceland/reykjavik",
+      "coordinate_note": "Representative city marker, rounded to two decimal degrees from source coordinates in degrees and minutes.",
+      "highlight_source_urls": [
+        "https://www.harpa.is/en/welcome",
+        "https://www.hallgrimskirkja.is/en-gb/husi%C3%B0-og-sagan"
+      ],
+      "tag_note": "Editorial discovery categories, not measured suitability scores.",
+      "climate_station": "Reykjavik Airport",
+      "climate_period": "1992–2021",
+      "climate_note": "Historical monthly means, January through December; not a forecast. Airport station conditions may differ from the city center. Source averaging periods differ across cities.",
+      "source_temperature_unit": "F",
+      "source_monthly_mean_temperatures": [
+        33,
+        33,
+        35,
+        39,
+        44,
+        50,
+        53,
+        52,
+        48,
+        41,
+        36,
+        34
+      ],
+      "temperature_precision_note": "Whole Fahrenheit source values converted to whole Celsius to avoid false precision.",
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+    }
+  },
+  {
+    "id": "barcelona",
+    "name": "Barcelona",
+    "country": "Spain",
+    "country_code": "ESP",
+    "lat": 41.38,
+    "lng": 2.18,
+    "tags": [
+      "culture",
+      "beaches",
+      "food"
+    ],
+    "image_url": null,
+    "highlights": [
+      "Park Güell and its architectural landscape.",
+      "Sagrada Família basilica in Barcelona."
+    ],
+    "monthly_avg_temp_c": [
+      9,
+      11,
+      12,
+      14,
+      18,
+      22,
+      24,
+      25,
+      22,
+      18,
+      13,
+      11
+    ],
+    "lodging_per_night_usd": null,
+    "daily_ex_lodging_usd": null,
+    "climate_source_url": "https://www.timeanddate.com/weather/spain/barcelona/climate",
+    "climate_checked_at": "2026-10-10",
+    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "_provenance": {
+      "checked_at": "2026-10-10",
+      "coordinate_source_url": "https://www.timeanddate.com/worldclock/spain/barcelona",
+      "coordinate_note": "Representative city marker, rounded to two decimal degrees from source coordinates in degrees and minutes.",
+      "highlight_source_urls": [
+        "https://parkguell.barcelona/en",
+        "https://patrimoni.gencat.cat/en/collection/sagrada-familia"
+      ],
+      "tag_note": "Editorial discovery categories, not measured suitability scores.",
+      "climate_station": "Barcelona Airport",
+      "climate_period": "1992–2021",
+      "climate_note": "Historical monthly means, January through December; not a forecast. Airport station conditions may differ from the city center. Source averaging periods differ across cities.",
+      "source_temperature_unit": "F",
+      "source_monthly_mean_temperatures": [
+        49,
+        51,
+        54,
+        58,
+        64,
+        71,
+        76,
+        77,
+        72,
+        65,
+        56,
+        51
+      ],
+      "temperature_precision_note": "Whole Fahrenheit source values converted to whole Celsius to avoid false precision.",
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+    }
+  },
+  {
+    "id": "bangkok",
+    "name": "Bangkok",
+    "country": "Thailand",
+    "country_code": "THA",
+    "lat": 13.73,
+    "lng": 100.5,
+    "tags": [
+      "food",
+      "culture",
+      "nightlife"
+    ],
+    "image_url": null,
+    "highlights": [
+      "The Grand Palace complex in Bangkok.",
+      "Wat Arun, the Temple of Dawn."
+    ],
+    "monthly_avg_temp_c": [
+      28,
+      29,
+      31,
+      31,
+      31,
+      30,
+      30,
+      30,
+      29,
+      29,
+      29,
+      27
+    ],
+    "lodging_per_night_usd": null,
+    "daily_ex_lodging_usd": null,
+    "climate_source_url": "https://www.timeanddate.com/weather/thailand/bangkok/climate",
+    "climate_checked_at": "2026-10-10",
+    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "_provenance": {
+      "checked_at": "2026-10-10",
+      "coordinate_source_url": "https://www.timeanddate.com/worldclock/thailand/bangkok",
+      "coordinate_note": "Representative city marker, rounded to two decimal degrees from source coordinates in degrees and minutes.",
+      "highlight_source_urls": [
+        "https://api.tat.or.th/upload/multimedia/ebrochure/file/live/Salam-Routes-1540874234.pdf"
+      ],
+      "tag_note": "Editorial discovery categories, not measured suitability scores.",
+      "climate_station": "Don Muang Airport",
+      "climate_period": "1992–2021",
+      "climate_note": "Historical monthly means, January through December; not a forecast. Airport station conditions may differ from the city center. Source averaging periods differ across cities.",
+      "source_temperature_unit": "C",
+      "source_monthly_mean_temperatures": [
+        28,
+        29,
+        31,
+        31,
+        31,
+        30,
+        30,
+        30,
+        29,
+        29,
+        29,
+        27
+      ],
+      "temperature_precision_note": "Celsius values retained at source precision.",
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+    }
+  },
+  {
+    "id": "singapore",
+    "name": "Singapore",
+    "country": "Singapore",
+    "country_code": "SGP",
+    "lat": 1.28,
+    "lng": 103.85,
+    "tags": [
+      "food",
+      "nature",
+      "culture"
+    ],
+    "image_url": null,
+    "highlights": [
+      "Gardens by the Bay in downtown Singapore.",
+      "Singapore Botanic Gardens and its National Orchid Garden."
+    ],
+    "monthly_avg_temp_c": [
+      28,
+      28,
+      29,
+      29,
+      29,
+      29,
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "lodging_per_night_usd": null,
+    "daily_ex_lodging_usd": null,
+    "climate_source_url": "https://www.timeanddate.com/weather/singapore/singapore/climate",
+    "climate_checked_at": "2026-10-10",
+    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "_provenance": {
+      "checked_at": "2026-10-10",
+      "coordinate_source_url": "https://www.timeanddate.com/worldclock/singapore/singapore",
+      "coordinate_note": "Representative city marker, rounded to two decimal degrees from source coordinates in degrees and minutes.",
+      "highlight_source_urls": [
+        "https://www.gardensbythebay.com.sg/en.html",
+        "https://sbg.nparks.gov.sg/attractions/"
+      ],
+      "tag_note": "Editorial discovery categories, not measured suitability scores.",
+      "climate_station": "Singapore / Paya Lebar",
+      "climate_period": "2012–2021",
+      "climate_note": "Historical monthly means, January through December; not a forecast. Airport station conditions may differ from the city center. Source averaging periods differ across cities.",
+      "source_temperature_unit": "C",
+      "source_monthly_mean_temperatures": [
+        28,
+        28,
+        29,
+        29,
+        29,
+        29,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28
+      ],
+      "temperature_precision_note": "Celsius values retained at source precision.",
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+    }
+  },
+  {
+    "id": "cape-town",
+    "name": "Cape Town",
+    "country": "South Africa",
+    "country_code": "ZAF",
+    "lat": -33.92,
+    "lng": 18.42,
+    "tags": [
+      "beaches",
+      "nature",
+      "adventure"
+    ],
+    "image_url": null,
+    "highlights": [
+      "Table Mountain overlooking Cape Town.",
+      "Kirstenbosch National Botanical Garden."
+    ],
+    "monthly_avg_temp_c": [
+      22,
+      22,
+      21,
+      18,
+      16,
+      14,
+      13,
+      13,
+      15,
+      17,
+      19,
+      21
+    ],
+    "lodging_per_night_usd": null,
+    "daily_ex_lodging_usd": null,
+    "climate_source_url": "https://www.timeanddate.com/weather/south-africa/cape-town/climate",
+    "climate_checked_at": "2026-10-10",
+    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "_provenance": {
+      "checked_at": "2026-10-10",
+      "coordinate_source_url": "https://www.timeanddate.com/worldclock/south-africa/cape-town",
+      "coordinate_note": "Representative city marker, rounded to two decimal degrees from source coordinates in degrees and minutes.",
+      "highlight_source_urls": [
+        "https://www.capetown.travel/"
+      ],
+      "tag_note": "Editorial discovery categories, not measured suitability scores.",
+      "climate_station": "Cape Town International Airport",
+      "climate_period": "1992–2021",
+      "climate_note": "Historical monthly means, January through December; not a forecast. Airport station conditions may differ from the city center. Source averaging periods differ across cities.",
+      "source_temperature_unit": "C",
+      "source_monthly_mean_temperatures": [
+        22,
+        22,
+        21,
+        18,
+        16,
+        14,
+        13,
+        13,
+        15,
+        17,
+        19,
+        21
+      ],
+      "temperature_precision_note": "Celsius values retained at source precision.",
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+    }
+  },
+  {
+    "id": "marrakech",
+    "name": "Marrakech",
+    "country": "Morocco",
+    "country_code": "MAR",
+    "lat": 31.63,
+    "lng": -7.98,
+    "tags": [
+      "culture",
+      "food"
+    ],
+    "image_url": null,
+    "highlights": [
+      "The historic medina of Marrakech.",
+      "Jardin Majorelle in Marrakech."
+    ],
+    "monthly_avg_temp_c": [
+      13,
+      14,
+      17,
+      19,
+      22,
+      26,
+      29,
+      29,
+      26,
+      22,
+      17,
+      14
+    ],
+    "lodging_per_night_usd": null,
+    "daily_ex_lodging_usd": null,
+    "climate_source_url": "https://www.timeanddate.com/weather/morocco/marrakech/climate",
+    "climate_checked_at": "2026-10-10",
+    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "_provenance": {
+      "checked_at": "2026-10-10",
+      "coordinate_source_url": "https://www.timeanddate.com/worldclock/morocco/marrakech",
+      "coordinate_note": "Representative city marker, rounded to two decimal degrees from source coordinates in degrees and minutes.",
+      "highlight_source_urls": [
+        "https://www.visitmorocco.com/en/travel/marrakech/medina",
+        "https://www.jardinmajorelle.com/wp-content/uploads/2022/12/Depliant-jm-en_web.pdf"
+      ],
+      "tag_note": "Editorial discovery categories, not measured suitability scores.",
+      "climate_station": "Marrakech Airport",
+      "climate_period": "1992–2021",
+      "climate_note": "Historical monthly means, January through December; not a forecast. Airport station conditions may differ from the city center. Source averaging periods differ across cities.",
+      "source_temperature_unit": "C",
+      "source_monthly_mean_temperatures": [
+        13,
+        14,
+        17,
+        19,
+        22,
+        26,
+        29,
+        29,
+        26,
+        22,
+        17,
+        14
+      ],
+      "temperature_precision_note": "Celsius values retained at source precision.",
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+    }
+  },
+  {
+    "id": "vancouver",
+    "name": "Vancouver",
+    "country": "Canada",
+    "country_code": "CAN",
+    "lat": 49.28,
+    "lng": -123.12,
+    "tags": [
+      "nature",
+      "adventure",
+      "food"
+    ],
+    "image_url": null,
+    "highlights": [
+      "Stanley Park and its walking trails.",
+      "Granville Island Public Market."
+    ],
+    "monthly_avg_temp_c": [
+      4,
+      5,
+      7,
+      9,
+      13,
+      16,
+      18,
+      18,
+      16,
+      11,
+      7,
+      4
+    ],
+    "lodging_per_night_usd": null,
+    "daily_ex_lodging_usd": null,
+    "climate_source_url": "https://www.timeanddate.com/weather/canada/vancouver/climate",
+    "climate_checked_at": "2026-10-10",
+    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "_provenance": {
+      "checked_at": "2026-10-10",
+      "coordinate_source_url": "https://www.timeanddate.com/worldclock/canada/vancouver",
+      "coordinate_note": "Representative city marker, rounded to two decimal degrees from source coordinates in degrees and minutes.",
+      "highlight_source_urls": [
+        "https://vancouver.ca/parks-recreation-culture/stanley-park.aspx",
+        "https://granvilleisland.com/Public-Market"
+      ],
+      "tag_note": "Editorial discovery categories, not measured suitability scores.",
+      "climate_station": "Vancouver International Airport",
+      "climate_period": "1992–2021",
+      "climate_note": "Historical monthly means, January through December; not a forecast. Airport station conditions may differ from the city center. Source averaging periods differ across cities.",
+      "source_temperature_unit": "F",
+      "source_monthly_mean_temperatures": [
+        40,
+        41,
+        44,
+        49,
+        56,
+        61,
+        65,
+        65,
+        60,
+        51,
+        44,
+        39
+      ],
+      "temperature_precision_note": "Whole Fahrenheit source values converted to whole Celsius to avoid false precision.",
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+    }
+  },
+  {
+    "id": "rio-de-janeiro",
+    "name": "Rio de Janeiro",
+    "country": "Brazil",
+    "country_code": "BRA",
+    "lat": -22.97,
+    "lng": -43.18,
+    "tags": [
+      "beaches",
+      "nightlife",
+      "nature"
+    ],
+    "image_url": null,
+    "highlights": [
+      "Christ the Redeemer on Corcovado.",
+      "Sugarloaf Mountain overlooking the city and bay."
+    ],
+    "monthly_avg_temp_c": [
+      28,
+      28,
+      27,
+      26,
+      23,
+      23,
+      22,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "lodging_per_night_usd": null,
+    "daily_ex_lodging_usd": null,
+    "climate_source_url": "https://www.timeanddate.com/weather/brazil/rio-de-janeiro/climate",
+    "climate_checked_at": "2026-10-10",
+    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "_provenance": {
+      "checked_at": "2026-10-10",
+      "coordinate_source_url": "https://www.timeanddate.com/worldclock/brazil/rio-de-janeiro",
+      "coordinate_note": "Representative city marker, rounded to two decimal degrees from source coordinates in degrees and minutes.",
+      "highlight_source_urls": [
+        "https://riotur.rio/wp-content/uploads/2023/04/RIO-HIGHLIGHTS.pdf"
+      ],
+      "tag_note": "Editorial discovery categories, not measured suitability scores.",
+      "climate_station": "Rio De Janeiro Airport",
+      "climate_period": "1992–2021",
+      "climate_note": "Historical monthly means, January through December; not a forecast. Airport station conditions may differ from the city center. Source averaging periods differ across cities.",
+      "source_temperature_unit": "C",
+      "source_monthly_mean_temperatures": [
+        28,
+        28,
+        27,
+        26,
+        23,
+        23,
+        22,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "temperature_precision_note": "Celsius values retained at source precision.",
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+    }
+  },
+  {
+    "id": "punta-cana",
+    "name": "Punta Cana",
+    "country": "Dominican Republic",
+    "country_code": "DOM",
+    "lat": 18.53,
+    "lng": -68.37,
+    "tags": [
+      "beaches",
+      "nature",
+      "adventure"
+    ],
+    "image_url": null,
+    "highlights": [
+      "Bávaro Beach in the Punta Cana resort region.",
+      "Ojos Indígenas ecological reserve with nature trails and freshwater springs."
+    ],
+    "monthly_avg_temp_c": [
+      25,
+      25,
+      25,
+      26,
+      27,
+      28,
+      28,
+      28,
+      28,
+      27,
+      26,
+      26
+    ],
+    "lodging_per_night_usd": null,
+    "daily_ex_lodging_usd": null,
+    "climate_source_url": "https://www.timeanddate.com/weather/dominican-republic/punta-cana/climate",
+    "climate_checked_at": "2026-10-10",
+    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "_provenance": {
+      "checked_at": "2026-10-10",
+      "coordinate_source_url": "https://www.timeanddate.com/worldclock/dominican-republic/punta-cana",
+      "coordinate_note": "Representative city marker, rounded to two decimal degrees from source coordinates in degrees and minutes.",
+      "highlight_source_urls": [
+        "https://www.godominicanrepublic.com/destinations/punta-cana",
+        "https://www.puntacana.org/en/environment/indigenous-eyes-ecological-reserve"
+      ],
+      "tag_note": "Editorial discovery categories, not measured suitability scores.",
+      "climate_station": "Punta Cana",
+      "climate_period": "2012–2021",
+      "climate_note": "Historical monthly means, January through December; not a forecast. Airport station conditions may differ from the city center. Source averaging periods differ across cities.",
+      "source_temperature_unit": "C",
+      "source_monthly_mean_temperatures": [
+        25,
+        25,
+        25,
+        26,
+        27,
+        28,
+        28,
+        28,
+        28,
+        27,
+        26,
+        26
+      ],
+      "temperature_precision_note": "Celsius values retained at source precision.",
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+    }
+  }
+]
