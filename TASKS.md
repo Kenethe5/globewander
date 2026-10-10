@@ -44,7 +44,7 @@ Detailed steps: [`tickets/ENGINEER-2-BACKEND.md`](tickets/ENGINEER-2-BACKEND.md)
 
 Detailed steps: [`tickets/ENGINEER-3-AI-INTEGRATION.md`](tickets/ENGINEER-3-AI-INTEGRATION.md)
 
-- [ ] **AI-01 · P0 · ~3h:** Matching TypeScript interfaces, API client, React app state, explicit mock mode.
+- [x] **AI-01 · P0 · ~3h:** Matching TypeScript interfaces, API client, React app state, explicit mock mode.
 - [ ] **AI-02 · P0 · ~3–4h:** Server-side Gemini structured preference parser with validation and fallback.
 - [ ] **AI-03 · P0 · ~3h:** End-to-end search → parse → score → globe and result cards.
 - [ ] **AI-04 · P0 · ~3h:** What If? controls, debounced ranking-only requests and stale-request guard.

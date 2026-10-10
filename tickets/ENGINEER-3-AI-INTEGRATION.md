@@ -6,7 +6,7 @@
 
 ## My assigned ticket checklist
 
-- [ ] **AI-01** — TypeScript contract, API client, and app state
+- [x] **AI-01** — TypeScript contract, API client, and app state
 - [ ] **AI-02** — Gemini structured preference parsing
 - [ ] **AI-03** — Search UI + complete end-to-end loop
 - [ ] **AI-04** — What If? live controls

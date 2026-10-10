@@ -1,0 +1,12 @@
+:root { font-family: system-ui, sans-serif; color: #173644; background: #f3f7f8; }
+body { margin: 0; }
+main { max-width: 850px; margin: auto; padding: 24px; }
+aside { padding: 16px; background: #fff0bb; border: 1px solid #8b6a00; }
+form { display: grid; gap: 12px; margin: 24px 0; }
+textarea { min-height: 90px; padding: 12px; font: inherit; }
+button { padding: 10px 16px; font: inherit; cursor: pointer; }
+button[aria-pressed="true"] { background: #173644; color: white; }
+button:disabled { cursor: wait; }
+ul { padding: 0; list-style: none; }
+li { padding: 18px; margin: 12px 0; background: white; border: 1px solid #b4c7cf; border-radius: 8px; }
+pre { overflow: auto; }
