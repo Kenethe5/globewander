@@ -4,7 +4,7 @@ Use this file as the repository-wide implementation contract. **First read** `RE
 
 ## Product constraints
 
-- One-user hackathon MVP: responsive interactive 3D globe, curated city recommendations, natural-language preference parsing, city details, and **What If?** reranking.
+- One-user hackathon MVP: responsive interactive 3D globe, curated city recommendations, structured preference controls, city details, and **What If?** reranking.
 - **Do not implement group trips, bookings, live flight prices, auth, AI video, or itinerary generation** unless a later explicit ticket adds them.
 - Prefer **small, working vertical slices** and mock fixtures over overengineering.
 - API keys are server-only. Never send `GEMINI_API_KEY` to the browser.
@@ -14,8 +14,8 @@ Use this file as the repository-wide implementation contract. **First read** `RE
 
 - **Engineer 1:** owns globe, country geometry, destination displays and `AppShell`. Do not edit ranking, Gemini, `App.tsx`, or `services/api.ts`.
 - **Engineer 2:** owns backend schemas, endpoint registration, destination JSON, scoring logic and tests. Do not edit frontend or Gemini service.
-- **Engineer 3:** owns Gemini preference parsing, search/preference controls, API client, root app wiring, deployment and integration. Do not rewrite globe or scoring internals.
-- Integration exception: Engineer 2 registers Engineer 3's `backend/routers/preferences.py` router in `main.py` after its interface is ready. Agree on names via the shared contract, not ad-hoc edits.
+- **Engineer 3:** owns preference controls, post-MVP Gemini parsing, API client, root app wiring, deployment and integration. Do not rewrite globe or scoring internals.
+- Integration exception: Engineer 2 registers Engineer 3's `backend/routers/preferences.py` router in `main.py` after its interface is ready in post-MVP AI-07. Agree on names via the shared contract, not ad-hoc edits.
 - If changes cross ownership boundaries, request a small integration PR and tell the owner before modifying their files.
 
 ## Source-of-truth contracts
@@ -46,6 +46,8 @@ Use this file as the repository-wide implementation contract. **First read** `RE
 
 ## Implementation and testing standards
 
+- Spec-driven workflow: discuss each ticket with the user, draft and revise its spec together, and wait for explicit user approval before implementation.
+
 - Add a short test or an explicit manual verification step with every ticket.
 - Python: type hints, Pydantic validation, deterministic pure scoring functions, pytest.
 - TypeScript: strict interfaces, no `any` for API data, basic loading/empty/error UI.
@@ -64,7 +66,7 @@ Use this file as the repository-wide implementation contract. **First read** `RE
 
 ## Priority order
 
-**P0:** functioning search → parse → rank → globe → What If? loop.  
+**P0:** functioning controls → rank → globe → What If? loop; Gemini parsing is deferred until after MVP.
 **P1:** source-aware details, photo, typical weather, animation, polish.  
 **P2:** comparison, Surprise Me, hotels, anything unrelated to demo-critical path.
 
