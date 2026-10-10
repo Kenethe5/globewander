@@ -7,10 +7,10 @@
 ## The 90-second demo
 
 1. **0:15–0:30:** Show the 3D globe, briefly rotate it, point to city markers. Say recommendations cover selected cities, not every country.
-2. **0:30–0:45:** Type: “Five days in December, warm beaches and good food, $1,500 **excluding flights**.” Submit. Show the structured preferences extracted by Gemini.
+2. **0:30–0:45:** Set controls: 5 days, December, Warm, Beaches + Food, $1,500 **excluding flights**. Click “Find destinations.” These controls are planned in AI-02; the current AI-01 screen remains transitional.
 3. **0:45–1:00:** Globe highlights top city matches; select the first card and fly to it. Open its brief details and tradeoff explanation.
-4. **1:00–1:20:** Switch the interests from beaches to culture and the climate preference to cold. Show instant reranking without another AI call.
-5. **1:20–1:30:** Explain the stack: Gemini parses language; your scoring engine computes matches; React/Three.js renders globe and explanations.
+4. **1:00–1:20:** Switch the interests from beaches to culture and the climate preference to cold. Show instant reranking using only the ranking endpoint.
+5. **1:20–1:30:** Explain the stack: controls supply structured preferences; Python computes matches; React/Three.js renders the globe. Gemini is deferred until after MVP.
 
 ## Never promise these in the pitch
 
@@ -23,15 +23,15 @@
 
 - [ ] Judging laptop/browser renders WebGL globe at smooth frame rate.
 - [ ] Frontend and backend are running; correct API URL and CORS.
-- [ ] `GEMINI_API_KEY` is configured server-side and quotas tested.
-- [ ] Search query and two contrasting preference scenarios tested.
+- [ ] The entire MVP runs without a Gemini key or parser endpoint.
+- [ ] Controls and two contrasting interest/climate profiles with explicit months tested.
 - [ ] Selected destinations have legitimate highlights and visible caveats.
 - [ ] One offline/mock fallback works **with a clear DEMO label**.
 - [ ] Team knows who talks, who clicks, and who answers technical questions.
 
 ## If something fails
 
-- **Gemini slow:** show already parsed preferences and continue with editable controls; announce fallback if using cached test text.
+- **Ranking slow:** retain previous results with an updating indicator; on failure show error/retry and label previous results as stale.
 - **Network down:** run local backend and fixture mode labeled demo-only.
 - **Weather or cost missing:** show typical climate or “No verified estimate”; do not substitute invented numbers.
 - **Globe lagging:** disable atmosphere/auto-rotate, reduce texture and GeoJSON complexity.
