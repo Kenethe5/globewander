@@ -1,5 +1,9 @@
 from enum import Enum
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, model_validator
+
+
+class ContractModel(BaseModel):
+    model_config = ConfigDict(allow_inf_nan=False)
 
 
 class ClimatePreference(str, Enum):
@@ -23,7 +27,8 @@ class BudgetScope(str, Enum):
     TOTAL_TRIP = "total_trip"
 
 
-class TravelPreferences(BaseModel):
+class TravelPreferences(ContractModel):
+    model_config = ConfigDict(allow_inf_nan=False, extra='forbid')
     origin_city: str | None = None
     budget_usd: float | None = Field(default=None, ge=0)
     budget_scope: BudgetScope = BudgetScope.EXCLUDING_FLIGHTS
@@ -33,7 +38,7 @@ class TravelPreferences(BaseModel):
     climate: ClimatePreference = ClimatePreference.ANY
 
 
-class PriceRange(BaseModel):
+class PriceRange(ContractModel):
     min: float = Field(ge=0)
     max: float = Field(ge=0)
     source_url: str | None = None
@@ -48,7 +53,7 @@ class PriceRange(BaseModel):
             raise ValueError("min must be less than or equal to max")
         return self
     
-class DestinationSummary(BaseModel):
+class DestinationSummary(ContractModel):
     id: str = Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
     name: str = Field(min_length=1)
     country: str = Field(min_length=1)
@@ -81,13 +86,13 @@ class BudgetStatus(str, Enum):
     NOT_APPLICABLE = "not_applicable"
 
 
-class ScoreBreakdown(BaseModel):
+class ScoreBreakdown(ContractModel):
     interests: float | None = Field(ge=0, le=100)
     climate: float | None = Field(ge=0, le=100)
     affordability: float | None = Field(ge=0, le=100)
 
 
-class OnsiteCostRange(BaseModel):
+class OnsiteCostRange(ContractModel):
     min: float = Field(ge=0)
     max: float = Field(ge=0)
 
@@ -98,7 +103,7 @@ class OnsiteCostRange(BaseModel):
         return self
 
 
-class Recommendation(BaseModel):
+class Recommendation(ContractModel):
     destination_id: str = Field(
         pattern=r"^[a-z0-9]+(?:-[a-z0-9]+)*$"
     )

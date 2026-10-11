@@ -1,0 +1,302 @@
+{
+  "lisbon": {
+    "source_url": "https://www.budgetyourtrip.com/portugal/lisbon",
+    "checked_at": "2026-10-11",
+    "currency": "USD",
+    "tiers": [
+      "budget",
+      "mid-range"
+    ],
+    "accommodation_per_person_double_occupancy": [
+      29,
+      72
+    ],
+    "local_transport": [
+      11,
+      28
+    ],
+    "food": [
+      34,
+      83
+    ],
+    "entertainment": [
+      11,
+      27
+    ]
+  },
+  "kyoto": {
+    "source_url": "https://testing.budgetyourtrip.com/japan/kyoto",
+    "checked_at": "2026-10-11",
+    "currency": "USD",
+    "tiers": [
+      "budget",
+      "mid-range"
+    ],
+    "accommodation_per_person_double_occupancy": [
+      25,
+      61
+    ],
+    "local_transport": [
+      3,
+      7
+    ],
+    "food": [
+      16,
+      40
+    ],
+    "entertainment": [
+      5,
+      13
+    ]
+  },
+  "cancun": {
+    "source_url": "https://www.budgetyourtrip.com/mexico/cancun",
+    "checked_at": "2026-10-11",
+    "currency": "USD",
+    "tiers": [
+      "budget",
+      "mid-range"
+    ],
+    "accommodation_per_person_double_occupancy": [
+      35,
+      90
+    ],
+    "local_transport": [
+      6,
+      16
+    ],
+    "food": [
+      16,
+      45
+    ],
+    "entertainment": [
+      13,
+      32
+    ]
+  },
+  "reykjavik": {
+    "source_url": "https://www.budgetyourtrip.com/iceland/reykjavik",
+    "checked_at": "2026-10-11",
+    "currency": "USD",
+    "tiers": [
+      "budget",
+      "mid-range"
+    ],
+    "accommodation_per_person_double_occupancy": [
+      53,
+      160
+    ],
+    "local_transport": [
+      21,
+      52
+    ],
+    "food": [
+      23,
+      60
+    ],
+    "entertainment": [
+      33,
+      83
+    ]
+  },
+  "barcelona": {
+    "source_url": "https://testing.budgetyourtrip.com/spain/barcelona",
+    "checked_at": "2026-10-11",
+    "currency": "USD",
+    "tiers": [
+      "budget",
+      "mid-range"
+    ],
+    "accommodation_per_person_double_occupancy": [
+      40,
+      106
+    ],
+    "local_transport": [
+      8,
+      22
+    ],
+    "food": [
+      27,
+      67
+    ],
+    "entertainment": [
+      15,
+      38
+    ]
+  },
+  "bangkok": {
+    "source_url": "https://www.budgetyourtrip.com/thailand/bangkok",
+    "checked_at": "2026-10-11",
+    "currency": "USD",
+    "tiers": [
+      "budget",
+      "mid-range"
+    ],
+    "accommodation_per_person_double_occupancy": [
+      18,
+      48
+    ],
+    "local_transport": [
+      2,
+      6
+    ],
+    "food": [
+      13,
+      34
+    ],
+    "entertainment": [
+      6,
+      17
+    ]
+  },
+  "singapore": {
+    "source_url": "https://www.budgetyourtrip.com/Singapore",
+    "checked_at": "2026-10-11",
+    "currency": "USD",
+    "tiers": [
+      "budget",
+      "mid-range"
+    ],
+    "accommodation_per_person_double_occupancy": [
+      38,
+      102
+    ],
+    "local_transport": [
+      4.31,
+      11
+    ],
+    "food": [
+      19,
+      48
+    ],
+    "entertainment": [
+      13,
+      34
+    ]
+  },
+  "cape-town": {
+    "source_url": "https://www.budgetyourtrip.com/south-africa/cape-town",
+    "checked_at": "2026-10-11",
+    "currency": "USD",
+    "tiers": [
+      "budget",
+      "mid-range"
+    ],
+    "accommodation_per_person_double_occupancy": [
+      28,
+      87
+    ],
+    "local_transport": [
+      8,
+      19
+    ],
+    "food": [
+      62,
+      80
+    ],
+    "entertainment": [
+      9,
+      26
+    ]
+  },
+  "marrakech": {
+    "source_url": "https://www.budgetyourtrip.com/morocco/marrakesh",
+    "checked_at": "2026-10-11",
+    "currency": "USD",
+    "tiers": [
+      "budget",
+      "mid-range"
+    ],
+    "accommodation_per_person_double_occupancy": [
+      21,
+      57
+    ],
+    "local_transport": [
+      5,
+      13
+    ],
+    "food": [
+      12,
+      28
+    ],
+    "entertainment": [
+      4,
+      11
+    ]
+  },
+  "vancouver": {
+    "source_url": "https://www.budgetyourtrip.com/canada/vancouver",
+    "checked_at": "2026-10-11",
+    "currency": "USD",
+    "tiers": [
+      "budget",
+      "mid-range"
+    ],
+    "accommodation_per_person_double_occupancy": [
+      30,
+      84
+    ],
+    "local_transport": [
+      6,
+      14
+    ],
+    "food": [
+      18,
+      52
+    ],
+    "entertainment": [
+      12,
+      35
+    ]
+  },
+  "rio-de-janeiro": {
+    "source_url": "https://www.budgetyourtrip.com/brazil/rio-de-janeiro",
+    "checked_at": "2026-10-11",
+    "currency": "USD",
+    "tiers": [
+      "budget",
+      "mid-range"
+    ],
+    "accommodation_per_person_double_occupancy": [
+      25,
+      65
+    ],
+    "local_transport": [
+      3,
+      8
+    ],
+    "food": [
+      13,
+      34
+    ],
+    "entertainment": [
+      8,
+      21
+    ]
+  },
+  "punta-cana": {
+    "source_url": "https://www.budgetyourtrip.com/dominican-republic/punta-cana",
+    "checked_at": "2026-10-11",
+    "currency": "USD",
+    "tiers": [
+      "budget",
+      "mid-range"
+    ],
+    "accommodation_per_person_double_occupancy": [
+      40,
+      99
+    ],
+    "local_transport": [
+      3,
+      7
+    ],
+    "food": [
+      27,
+      67
+    ],
+    "entertainment": [
+      12,
+      31
+    ]
+  }
+}

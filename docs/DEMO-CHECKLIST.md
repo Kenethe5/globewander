@@ -40,3 +40,14 @@
 ## Closing pitch
 
 “Most travel apps ask where you want to go. WanderSphere helps you discover the destination that actually fits your trip—and shows how the answer changes when your priorities do.”
+# Completion rehearsal path
+
+Use the current root README startup commands; run Python from the repository root (`python3 -m uvicorn backend.main:app`). The completion handoff records automated checks and remaining manual gates.
+
+1. Choose $1,500, 5 days, Warm, December, Beaches and Food; find destinations.
+2. Explain that only 12 curated cities are ranked. Show a licensed photo, source/date and cost assumptions. Budget-to-mid-range planning intervals are not live prices; airfare is unknown and total-trip affordability stays unverified.
+3. Edit preferences; switch Warm to Cold. Wait approximately 300ms for Python reranking; keep the globe camera steady unless selecting a new city.
+4. Close the drawer if it covers a card, then select Kyoto and show its historical climate, source/date, score breakdown and tradeoffs.
+5. Use Explore a country → Portugal to show Lisbon, then France to show “Not yet covered.” Also manually test real polygon/marker clicks, dragging and zooming.
+6. Try Surprise Me. Optional text parsing without a key should show a safe failure while controls remain usable.
+7. Rehearse twice on the actual judging laptop. For offline fallback restart with `VITE_DEMO_MODE=true`; explicitly explain that fixture scores are fixed/invented and do not rerank.

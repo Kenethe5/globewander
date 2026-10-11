@@ -65,8 +65,8 @@ class RecommendationApiTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(status, 200)
         self.assertEqual(len(body["results"]), 12)
         self.assertEqual(body["results"][0]["destination_id"], "bangkok")
-        self.assertEqual(body["results"][0]["breakdown"]["affordability"], None)
-        self.assertEqual(body["results"][0]["budget_status"], "unverified")
+        self.assertEqual(body["results"][0]["breakdown"]["affordability"], 100)
+        self.assertEqual(body["results"][0]["budget_status"], "within")
         self.assertIn("reasons", body["results"][0])
         self.assertIn("tradeoffs", body["results"][0])
 

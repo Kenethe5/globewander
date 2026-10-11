@@ -1,5 +1,7 @@
 # Engineer 3 — Preference Controls, What If?, Integration, Deployment
 
+Completion implementation: root app integrates typed local display components, live ranking, stale-request cancellation, country choices, details, local demo setup, eligible Surprise Me, and optional server-only text parsing. See [completion handoff](../docs/COMPLETION-HANDOFF.md) for files and acceptance evidence. Live Gemini phrase accuracy and a separate judging-laptop rehearsal remain pending; mocked parser tests do not establish live model accuracy.
+
 **Mission:** Connect structured travel preferences directly to deterministic recommendations and the globe. Ship a working MVP before adding Gemini or natural-language input. Own app state, preference controls, the API client, and integration; do not rewrite globe or scoring internals.
 
 **Before starting:** Read `../README.md`, `../AGENTS.md`, `../docs/API-CONTRACT.md`, and `../TASKS.md`.
@@ -11,11 +13,11 @@ The MVP flow is **controls → recommendations → globe/results → What If?**.
 ## My assigned ticket checklist
 
 - [x] **AI-01** — TypeScript contract, API client, and app state (existing foundation)
-- [ ] **AI-02** — Structured preference controls and direct ranking
-- [ ] **AI-03** — Globe, results, and details integration
-- [ ] **AI-04** — Debounced What If? updates and request reliability
+- [x] **AI-02** — Structured preference controls and direct ranking
+- [x] **AI-03** — Globe, results, and details integration
+- [x] **AI-04** — Debounced What If? updates and request reliability
 - [ ] **AI-05** — Deployment and demo verification
-- [ ] **AI-06** — Optional differentiators, after MVP
+- [x] **AI-06** — Optional differentiators, after MVP
 - [ ] **AI-07** — Gemini natural-language parsing, after MVP
 
 Keep this checklist synchronized with `../TASKS.md`. For every implementation handoff record outcome, actual files touched, dependencies, verification results, acceptance criteria passed, and remaining limitations/mocks.
@@ -48,7 +50,7 @@ Show these limitations near the controls/results:
 
 **Verify:** `npm ci --prefix frontend`, `npm test --prefix frontend`, `npm run build --prefix frontend`; explicit demo mode renders sample results and selection without a backend. Current tests cover fixture labels, null costs, endpoint payloads, cancellation and errors. This scope review could not rerun them because local dependencies were absent (`vitest: command not found`); the completion checkbox reflects the existing implementation record, not fresh test evidence.
 
-## Ticket AI-02 — Structured controls and direct ranking [P0; frontend implemented; live acceptance pending]
+## Ticket AI-02 — Structured controls and direct ranking [P0; implemented and live acceptance verified]
 
 **Outcome:** A user can find curated city matches with no natural-language request or Gemini dependency.
 

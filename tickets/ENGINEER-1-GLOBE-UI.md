@@ -1,16 +1,18 @@
 # Engineer 1 — 3D Globe + Destination Display
 
+Completion implementation: local components now support the full contract; no GitHub Engineer 1 source was imported. See [completion handoff](../docs/COMPLETION-HANDOFF.md) for files and real-browser evidence, including actual Portugal polygon and Kyoto marker clicks. A separate judging-laptop check of subjective smoothness remains manual.
+
 **Mission:** Own everything the judge visually explores: the Earth, city markers, country interactions, result cards, detail drawer, and camera motion. Do **not** own API requests or Gemini calls. Build with dev fixture data from day one.
 
 **Before starting:** Read [`../README.md`](../README.md), [`../AGENTS.md`](../AGENTS.md), and [`../docs/API-CONTRACT.md`](../docs/API-CONTRACT.md).
 
 ## My assigned ticket checklist
 
-- [ ] **FE-01** — 3D globe bootstrapping
-- [ ] **FE-02** — Clickable countries + city markers
-- [ ] **FE-03** — Score-driven globe visualization
-- [ ] **FE-04** — Results cards + details drawer
-- [ ] **FE-05** — Camera, polish and interaction
+- [x] **FE-01** — 3D globe bootstrapping
+- [x] **FE-02** — Clickable countries + city markers
+- [x] **FE-03** — Score-driven globe visualization
+- [x] **FE-04** — Results cards + details drawer
+- [x] **FE-05** — Camera, polish and interaction
 
 Keep this checklist synchronized with [`../TASKS.md`](../TASKS.md). Each ticket below includes implementation detail, dependencies, and a done condition.
 

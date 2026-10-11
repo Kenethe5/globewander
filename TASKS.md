@@ -1,5 +1,18 @@
 # WanderSphere — GitHub Ticket Board (3 Engineers)
 
+## Completion implementation status
+
+The project-wide completion spec was approved in chat. Engineer 2/3 code was already local; no GitHub Engineer 1 code was imported. [Completion handoff](docs/COMPLETION-HANDOFF.md) records changed files, commands, acceptance evidence and limitations for every slice. The checkboxes below are conservative: visual judging-laptop gates and live Gemini phrase extraction are not inferred from unit tests.
+
+| Tickets | Current evidence |
+|---|---|
+| FE-01–05 | Implemented; real Chrome globe rendering, photos/source details, polygon/marker clicks, drag/zoom events, reranking and mobile bounds pass. Subjective smoothness on the judging laptop remains manual. |
+| BE-01–05 | Implemented; validation/scoring/API/source-metadata tests pass. All 12 cities have sourced planning cost intervals with visible assumptions. |
+| AI-01–04 | Implemented; live ranking and browser integration pass; lifecycle tests cover debounce cancellation, submit, invalid edits, unmount and details. |
+| AI-05 | Reliable local live/fallback run implemented and browser-tested. Separate judging-laptop rehearsal remains. |
+| AI-06 | Surprise Me implemented and browser-tested using eligible result IDs. |
+| AI-07 | Implemented and provider-mocked phrase/error tests pass. Actual Gemini phrase accuracy remains pending a server credential. |
+
 This is the **single status page**. Detailed technical tickets live in the three engineer files below. Check off a ticket only when its own **Done when** condition has been demonstrated. Estimates are approximate; prioritize a working end-to-end demo over completing every stretch item.
 
 | Owner | Ticket file | Responsibility | Boundary |
@@ -12,19 +25,19 @@ This is the **single status page**. Detailed technical tickets live in the three
 
 - [ ] **ALL:** Agree on [`docs/API-CONTRACT.md`](docs/API-CONTRACT.md). Lock field names, ISO alpha-3 country codes and city IDs.
 - [ ] **ALL:** Clone repo, choose branches, agree on review/merge process and demo laptop.
-- [ ] **ENGINEER 2:** Define canonical Pydantic models and stable destination IDs.
-- [ ] **ENGINEER 3:** Mirror API types in TypeScript and publish frontend API client/fixtures interface.
+- [x] **ENGINEER 2:** Define canonical Pydantic models and stable destination IDs.
+- [x] **ENGINEER 3:** Mirror API types in TypeScript and publish frontend API client/fixtures interface.
 - [ ] **ENGINEER 1:** Confirm globe library runs on the actual demo laptop.
 
 ## Engineer 1 — 3D globe + visual UI
 
 Detailed steps: [`tickets/ENGINEER-1-GLOBE-UI.md`](tickets/ENGINEER-1-GLOBE-UI.md)
 
-- [ ] **FE-01 · P0 · ~2h:** Initialize interactive globe; dragging, zooming, resizing work.
-- [ ] **FE-02 · P0 · ~3h:** Clickable country polygons + supported city markers.
-- [ ] **FE-03 · P0 · ~3h:** Marker and country colors update from `Recommendation[]` props.
-- [ ] **FE-04 · P0 · ~3h:** Ranked result cards + destination details, null-safe states.
-- [ ] **FE-05 · P1 · ~2–3h:** Camera fly-to, visual transitions, responsiveness and polish.
+- [x] **FE-01 · P0 · ~2h:** Initialize interactive globe; dragging, zooming, resizing work.
+- [x] **FE-02 · P0 · ~3h:** Clickable country polygons + supported city markers.
+- [x] **FE-03 · P0 · ~3h:** Marker and country colors update from `Recommendation[]` props.
+- [x] **FE-04 · P0 · ~3h:** Ranked result cards + destination details, null-safe states.
+- [x] **FE-05 · P1 · ~2–3h:** Camera fly-to, visual transitions, responsiveness and polish.
 
 **Handoff:** Export typed `TravelGlobe`, `RecommendationList`, `DestinationDetails` and `AppShell` components to Engineer 3. No network requests inside display components.
 
@@ -32,11 +45,11 @@ Detailed steps: [`tickets/ENGINEER-1-GLOBE-UI.md`](tickets/ENGINEER-1-GLOBE-UI.m
 
 Detailed steps: [`tickets/ENGINEER-2-BACKEND.md`](tickets/ENGINEER-2-BACKEND.md)
 
-- [ ] **BE-01 · P0 · ~2h:** FastAPI, Pydantic contracts, health and CORS.
-- [ ] **BE-02 · P0 · ~4h:** 12–15 curated city records, validation, destination GET endpoints.
-- [ ] **BE-03 · P0 · ~5h:** Pure interest/climate/affordability scoring; missing-data protections.
-- [ ] **BE-04 · P0 · ~3h:** `POST /api/recommendations`, unit tests, stable sorting.
-- [ ] **BE-05 · P1 · ~2–3h:** Source audit, cost caveats, error handling and hardening.
+- [x] **BE-01 · P0 · ~2h:** FastAPI, Pydantic contracts, health and CORS.
+- [x] **BE-02 · P0 · ~4h:** 12–15 curated city records, validation, destination GET endpoints.
+- [x] **BE-03 · P0 · ~5h:** Pure interest/climate/affordability scoring; missing-data protections.
+- [x] **BE-04 · P0 · ~3h:** `POST /api/recommendations`, unit tests, stable sorting.
+- [x] **BE-05 · P1 · ~2–3h:** Source audit, cost caveats, error handling and hardening.
 
 **Handoff:** Supply stable GET endpoints and ranking API to Engineer 3. Preference-router registration is deferred until post-MVP AI-07; it does not block ranking.
 
@@ -45,11 +58,11 @@ Detailed steps: [`tickets/ENGINEER-2-BACKEND.md`](tickets/ENGINEER-2-BACKEND.md)
 Detailed steps: [`tickets/ENGINEER-3-AI-INTEGRATION.md`](tickets/ENGINEER-3-AI-INTEGRATION.md)
 
 - [x] **AI-01 · P0 · ~3h:** Matching TypeScript interfaces, API client, React app state, explicit mock mode.
-- [ ] **AI-02 · P0 · ~3h:** Compact wizard: budget ($1,500), days (5), climate, month, interests; submit directly to ranking. Frontend implemented; live BE-04 acceptance pending. [Spec](docs/AI-02-SPEC.md).
-- [ ] **AI-03 · P0 · ~3h:** Structured preferences → score → globe, result cards and details.
-- [ ] **AI-04 · P0 · ~3h:** What If? controls, debounced ranking-only requests and stale-request guard.
+- [x] **AI-02 · P0 · ~3h:** Compact wizard: budget ($1,500), days (5), climate, month, interests; submit directly to ranking. Live acceptance verified. [Spec](docs/AI-02-SPEC.md).
+- [x] **AI-03 · P0 · ~3h:** Structured preferences → score → globe, result cards and details.
+- [x] **AI-04 · P0 · ~3h:** What If? controls, debounced ranking-only requests and stale-request guard.
 - [ ] **AI-05 · P0 · ~3–4h:** Deployment or reliable local run, smoke tests and demo rehearsal.
-- [ ] **AI-06 · P2 · optional:** Surprise Me or comparison only after all P0 done.
+- [x] **AI-06 · P2 · optional:** Surprise Me from eligible canonical results; local MVP flow verified.
 - [ ] **AI-07 · P2 · after MVP:** Optional server-side Gemini parser populating the existing controls.
 
 **Handoff:** Integrate components from Engineer 1 and API from Engineer 2 without changing their internal ownership areas.
@@ -84,9 +97,9 @@ Develop against [`shared/`](shared/) mocks while waiting for handoffs. Make smal
 
 Use [`docs/DEMO-CHECKLIST.md`](docs/DEMO-CHECKLIST.md) for the live presentation and fallback checklist.
 
-- [ ] One judge can set structured preferences and see supported cities ranked without Gemini.
-- [ ] Updating interests/climate changes the rankings without re-calling Gemini.
-- [ ] Country and city selections match the same canonical IDs.
-- [ ] Unsupported countries aren't depicted as low-scoring destinations.
-- [ ] No fake airfare, hotel inventory, prices, or unlabeled mock scores.
+- [x] One judge can set structured preferences and see supported cities ranked without Gemini.
+- [x] Updating interests/climate changes the rankings without re-calling Gemini.
+- [x] Country and city selections match the same canonical IDs.
+- [x] Unsupported countries aren't depicted as low-scoring destinations.
+- [x] No fake airfare, hotel inventory, prices, or unlabeled mock scores.
 - [ ] Error/fallback behavior and a real judging-laptop run have been tested.

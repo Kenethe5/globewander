@@ -1,5 +1,27 @@
 # WanderSphere
 
+## Current local completion run
+
+The full controls → live Python ranking → globe → What If? flow is integrated. See [completion handoff](docs/COMPLETION-HANDOFF.md) for ticket evidence and remaining manual checks; the historical notes below describe earlier milestones.
+
+From the repository root, use two terminals:
+
+```sh
+python3 -m pip install -r backend/requirements.txt
+python3 -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+```
+
+```sh
+npm ci --prefix frontend
+npm run dev --prefix frontend -- --host 127.0.0.1
+```
+
+Open `http://127.0.0.1:5173`. Live mode is default. For a backend-free fallback, start `VITE_DEMO_MODE=true npm run dev --prefix frontend`; the banner explicitly identifies fixed invented fixtures. All 12 live cities have sourced on-site planning intervals and locally bundled licensed photos. Budget changes affect affordability and eligibility when flights are excluded. Details show source links, checked dates, photo credits and assumptions. Estimates are budget-to-mid-range averages, not live quotes or guaranteed bounds.
+
+Optional text parsing requires `GEMINI_API_KEY` exported only in the backend environment. `GEMINI_MODEL` is configurable; the example uses `gemini-3.8-flash` from Google's current documentation. Environment files are examples, not automatically loaded by Python; export variables before starting the server. Without a key, parsing returns a useful 503 and the controls still work. Parsing fills controls and never calculates rankings. `CORS_ORIGINS` accepts an explicit comma-separated list; wildcard entries are discarded.
+
+Verification: `python3 -m pytest backend/tests -q`, `npm test --prefix frontend`, `npm run build --prefix frontend`. For real Chrome smoke checks, install `puppeteer-core` in a separate tooling directory, set `WANDER_PUPPETEER_MODULE` to its absolute module directory and run `node scripts/browser-smoke.cjs` with both servers running. `WANDER_CHROME_PATH` overrides the Mac Chrome path. For fixture checks, run a demo server on port 5174 and add `WANDER_SITE_URL=http://127.0.0.1:5174 WANDER_DEMO_CHECK=1`.
+
 One-user travel discovery MVP. The shared API is defined in [docs/API-CONTRACT.md](docs/API-CONTRACT.md); implementation status lives in [TASKS.md](TASKS.md).
 
 ## MVP direction
