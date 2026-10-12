@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, expect, it, vi } from 'vitest';
+vi.mock('./components/globe/TravelGlobe', () => ({ default: ({ onCountryClick }: { onCountryClick: (code: string | null, name: string) => void }) => <div aria-label="Globe rendering boundary"><button onClick={() => onCountryClick('PRT', 'Portugal')}>Portugal polygon</button><button onClick={() => onCountryClick(null, 'Uncovered country')}>Uncovered polygon</button></div> }));
 vi.mock('./services/api', async importOriginal => {
   const original = await importOriginal<typeof import('./services/api')>();
   return { ...original, demoMode: true, api: original.createApi({ demo: true }) };
@@ -105,4 +106,61 @@ it('allows returning to an invalid later answer after navigating Back', () => {
   expect(screen.getByRole('heading', { name: 'How many days?' })).toBeTruthy();
   change('Number of days', '5'); next();
   expect(screen.getByRole('heading', { name: 'What weather sounds good?' })).toBeTruthy();
+});
+
+it('shows country cities and explicit unsupported-country feedback', async () => {
+  render(<App />);
+  await waitFor(() => expect((screen.getByRole('button', { name: 'Portugal polygon' }))).toBeTruthy());
+  await screen.findByText('Loading curated cities…').catch(() => undefined);
+  await waitFor(() => expect(screen.queryByText('Loading curated cities…')).toBeNull());
+  click('Portugal polygon');
+  click('Lisbon');
+  await screen.findByRole('heading', { name: 'Lisbon' });
+  click('Uncovered polygon');
+  expect(screen.getByText(/Not yet covered/)).toBeTruthy();
+});
+
+it('invalidates an old response during debounce and debounces rapid edits without parsing', async () => {
+  render(<App />); next(4); await submit();
+  click('Edit preferences'); next(4);
+  let finish!: (value: { results: [] }) => void;
+  const rank = vi.spyOn(api, 'getRecommendations').mockImplementationOnce(() => new Promise(resolve => { finish = resolve; }));
+  const parse = vi.spyOn(api, 'parsePreferences');
+  click('Find destinations');
+  const oldSignal = rank.mock.calls[0][1];
+  click('Food'); click('Culture');
+  expect(oldSignal?.aborted).toBe(true);
+  await act(async () => { finish({ results: [] }); });
+  expect(screen.getByRole('button', { name: 'Kyoto, Japan' })).toBeTruthy();
+  expect(rank).toHaveBeenCalledTimes(1);
+  await waitFor(() => expect(rank).toHaveBeenCalledTimes(2));
+  expect(rank.mock.calls[1][0].interests).toEqual(['food', 'culture']);
+  expect(parse).not.toHaveBeenCalled();
+});
+
+it('cancels pending updates on explicit submit and unmount and blocks invalid edits', async () => {
+  const view = render(<App />); next(4); await submit();
+  const rank = vi.spyOn(api, 'getRecommendations');
+  click('Edit preferences');
+  change('Budget amount (USD)', '-5');
+  await act(async () => { await new Promise(resolve => setTimeout(resolve, 350)); });
+  expect(rank).not.toHaveBeenCalled();
+  change('Budget amount (USD)', '2000'); next(4); await submit();
+  await act(async () => { await new Promise(resolve => setTimeout(resolve, 350)); });
+  expect(rank).toHaveBeenCalledTimes(1);
+  click('Edit preferences'); change('Budget amount (USD)', '2500');
+  view.unmount();
+  await act(async () => { await new Promise(resolve => setTimeout(resolve, 350)); });
+  expect(rank).toHaveBeenCalledTimes(1);
+});
+
+it('dismisses pending details and ignores their late response', async () => {
+  const original = api.getDestination;
+  let finish!: (city: Awaited<ReturnType<typeof original>>) => void;
+  vi.spyOn(api, 'getDestination').mockImplementationOnce(() => new Promise(resolve => { finish = resolve; }));
+  render(<App />); next(4); await submit();
+  await screen.findByText('Loading city details…');
+  click('Close destination details');
+  await act(async () => { finish(await original('cancun')); });
+  expect(screen.queryByLabelText('Destination details')).toBeNull();
 });

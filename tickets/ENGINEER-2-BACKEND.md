@@ -1,16 +1,18 @@
 # Engineer 2 — FastAPI, Curated Destinations, and Ranking Engine
 
+Completion implementation: existing Engineer 2 source was retained, canonical validation/CORS/setup were hardened and scoring/API/data checks expanded. See [completion handoff](../docs/COMPLETION-HANDOFF.md) for files, tests and limitations. Costs/photos remain null; no synthetic test costs enter production.
+
 **Mission:** Make travel recommendations deterministic and explainable. You own request validation, destination data, ranking, and correctness tests. **Gemini never sets recommendation scores.**
 
 **Before starting:** Read [`../README.md`](../README.md), [`../AGENTS.md`](../AGENTS.md), and [`../docs/API-CONTRACT.md`](../docs/API-CONTRACT.md).
 
 ## My assigned ticket checklist
 
-- [ ] **BE-01** — API foundation and Pydantic schemas
-- [ ] **BE-02** — Curated city dataset + destination endpoints
-- [ ] **BE-03** — Deterministic ranking engine
-- [ ] **BE-04** — Recommendation API and tests
-- [ ] **BE-05** — Final source and operational hardening
+- [x] **BE-01** — API foundation and Pydantic schemas
+- [x] **BE-02** — Curated city dataset + destination endpoints
+- [x] **BE-03** — Deterministic ranking engine
+- [x] **BE-04** — Recommendation API and tests
+- [x] **BE-05** — Final source and operational hardening
 
 Keep this checklist synchronized with [`../TASKS.md`](../TASKS.md). Each ticket below includes implementation detail, dependencies, and a done condition.
 

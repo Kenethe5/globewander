@@ -1,82 +1,123 @@
 import { useEffect, useRef, useState } from 'react';
+import AppShell from './components/AppShell';
+import DestinationDetails from './components/destination/DestinationDetails';
+import RecommendationList from './components/destination/RecommendationList';
+import TravelGlobe from './components/globe/TravelGlobe';
 import PreferencesPanel, { preferenceError } from './components/preferences/PreferencesPanel';
+import SearchPanel from './components/search/SearchPanel';
 import { api, demoMode } from './services/api';
-import { defaultPreferences, type DestinationSummary, type Recommendation, type TravelPreferences } from './types/travel';
+import { defaultPreferences, type DestinationDetail, type DestinationSummary, type Recommendation, type TravelPreferences } from './types/travel';
+import './styles/globe.css';
+
+const initialPreferences: TravelPreferences = { ...defaultPreferences, budget_usd: 1500, duration_days: 5 };
 
 export default function App() {
-  const [preferences, setPreferences] = useState<TravelPreferences>(() => ({ ...defaultPreferences, budget_usd: 1500, duration_days: 5 }));
+  const [preferences, setPreferences] = useState<TravelPreferences>(initialPreferences);
   const [destinations, setDestinations] = useState<DestinationSummary[]>([]);
   const [results, setResults] = useState<Recommendation[]>([]);
   const [selectedDestinationId, setSelectedDestinationId] = useState<string | null>(null);
+  const [detail, setDetail] = useState<DestinationDetail | null>(null);
   const [rankingLoading, setRankingLoading] = useState(false);
+  const [detailsLoading, setDetailsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [detailError, setDetailError] = useState<string | null>(null);
   const [catalogError, setCatalogError] = useState<string | null>(null);
   const [catalogLoading, setCatalogLoading] = useState(true);
-  const [retry, setRetry] = useState(0);
+  const [catalogRetry, setCatalogRetry] = useState(0);
   const [stale, setStale] = useState(false);
   const [editing, setEditing] = useState(true);
   const [searched, setSearched] = useState(false);
-  const activeRequest = useRef<AbortController | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
+  const [countryCities, setCountryCities] = useState<DestinationSummary[]>([]);
+  const activeRanking = useRef<AbortController | null>(null);
+  const rerankTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   useEffect(() => {
     const controller = new AbortController();
     setCatalogLoading(true); setCatalogError(null);
-    api.getDestinations(controller.signal).then(response => setDestinations(response.destinations))
-      .catch((cause: unknown) => { if (!controller.signal.aborted) setCatalogError(message(cause)); })
+    api.getDestinations(controller.signal)
+      .then(response => { if (!controller.signal.aborted) setDestinations(response.destinations); })
+      .catch(cause => { if (!controller.signal.aborted) setCatalogError(message(cause)); })
       .finally(() => { if (!controller.signal.aborted) setCatalogLoading(false); });
     return () => controller.abort();
-  }, [retry]);
-  useEffect(() => () => activeRequest.current?.abort(), []);
-  function changePreferences(next: TravelPreferences) {
-    activeRequest.current?.abort();
-    setRankingLoading(false); setError(null); setStale(true);
-    setPreferences(next);
-  }
-  async function search() {
-    if (preferenceError(preferences) || catalogLoading || catalogError || rankingLoading) return;
-    activeRequest.current?.abort();
-    const controller = new AbortController(); activeRequest.current = controller;
-    setRankingLoading(true); setError(null); setStale(true);
+  }, [catalogRetry]);
+
+  useEffect(() => () => {
+    activeRanking.current?.abort();
+    if (rerankTimer.current) clearTimeout(rerankTimer.current);
+  }, []);
+
+  useEffect(() => {
+    if (!selectedDestinationId) { setDetail(null); setDetailError(null); setDetailsLoading(false); return; }
+    const controller = new AbortController();
+    setDetailsLoading(true); setDetail(null); setDetailError(null);
+    api.getDestination(selectedDestinationId, controller.signal)
+      .then(city => { if (!controller.signal.aborted) setDetail(city); })
+      .catch(cause => { if (!controller.signal.aborted) setDetailError(message(cause)); })
+      .finally(() => { if (!controller.signal.aborted) setDetailsLoading(false); });
+    return () => controller.abort();
+  }, [selectedDestinationId]);
+
+  useEffect(() => {
+    if (!searched || preferenceError(preferences)) return;
+    if (rerankTimer.current) clearTimeout(rerankTimer.current);
+    rerankTimer.current = setTimeout(() => { void rank(preferences, false); }, 300);
+    return () => { if (rerankTimer.current) clearTimeout(rerankTimer.current); };
+    // Changes made before the first explicit search must not call the backend.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [preferences]);
+
+  async function rank(next: TravelPreferences, explicit: boolean) {
+    if (preferenceError(next) || catalogLoading || catalogError) return;
+    if (rerankTimer.current) clearTimeout(rerankTimer.current);
+    activeRanking.current?.abort();
+    const controller = new AbortController(); activeRanking.current = controller;
+    setRankingLoading(true); setError(null);
+    if (!explicit) setStale(true);
     try {
-      const response = await api.getRecommendations(preferences, controller.signal);
+      const response = await api.getRecommendations(next, controller.signal);
       if (controller.signal.aborted) return;
-      setResults(response.results); setSearched(true); setStale(false); setEditing(false);
+      setResults(response.results); setSearched(true); setStale(false);
+      if (explicit) setEditing(false);
       setSelectedDestinationId(previous => response.results.some(result => result.destination_id === previous)
         ? previous : response.results.find(result => result.eligible)?.destination_id ?? null);
-    } catch (cause) { if (!controller.signal.aborted) setError(message(cause)); }
-    finally { if (!controller.signal.aborted) { setRankingLoading(false); } }
+    } catch (cause) {
+      if (!controller.signal.aborted) {
+        setError(message(cause));
+        if (explicit) setEditing(true);
+      }
+    } finally { if (!controller.signal.aborted) setRankingLoading(false); }
   }
-  const selected = destinations.find(city => city.id === selectedDestinationId);
-  return <main>
-    <h1>WanderSphere</h1>
-    <p>Find curated cities that fit your interests and travel preferences.</p>
-    {demoMode && <aside role="note"><strong>Development demo mode</strong> — invented sample scores. Controls do not recompute sample rankings; no live ranking is performed.</aside>}
-    {catalogLoading && <p role="status">Loading curated cities…</p>}
-    {catalogError && <p role="alert">{catalogError} <button onClick={() => setRetry(value => value + 1)}>Retry cities</button></p>}
-    {editing ? <PreferencesPanel preferences={preferences} onChange={changePreferences}
-      onSubmit={() => { void search(); }} submitDisabled={catalogLoading || !!catalogError || rankingLoading}
-      submitLabel={rankingLoading ? 'Ranking…' : error ? 'Retry recommendations' : 'Find destinations'} />
-      : <section className="preference-summary" aria-label="Your preferences">
-        <p>{preferences.budget_usd === null ? 'Budget not set' : `$${preferences.budget_usd.toLocaleString()} budget`} · {preferences.budget_scope === 'total_trip' ? 'including flights (unverified)' : 'excluding flights'} · {preferences.duration_days === null ? 'Length undecided' : `${preferences.duration_days} days`}</p>
-        <p>{preferences.climate === 'any' ? 'Any climate' : `${preferences.climate} weather`} · {preferences.travel_month === null ? 'Month undecided' : new Intl.DateTimeFormat('en', { month: 'long', timeZone: 'UTC' }).format(new Date(Date.UTC(2026, preferences.travel_month - 1, 1)))} · {preferences.interests.length ? preferences.interests.join(', ') : 'Any interests'}</p>
-        <button onClick={() => setEditing(true)}>Edit preferences</button>
-      </section>}
-    {error && <p role="alert">{error} Submit again to retry.</p>}
-    {rankingLoading && <p role="status">Updating recommendations…</p>}
-    {searched && stale && <p role="status">Results are from previous preferences. Submit your current preferences to update them.</p>}
-    <h2>{demoMode ? 'Sample results — dev only' : 'Results'}</h2>
-    {!results.length && <p>{searched ? 'No results. Try adjusting your preferences.' : 'Submit preferences to see curated cities.'}</p>}
-    {!!results.length && !results.some(result => result.eligible) && <p>No eligible matches. Review the tradeoffs below.</p>}
-    <ul>{results.map(result => {
-      const city = destinations.find(item => item.id === result.destination_id);
-      const cost = result.estimated_onsite_total_usd;
-      return <li key={result.destination_id}>
-        <button aria-pressed={selectedDestinationId === result.destination_id} onClick={() => setSelectedDestinationId(result.destination_id)}>{city?.name ?? result.destination_id}{city ? `, ${city.country}` : ''}</button>
-        <p>{demoMode ? 'Mock score' : 'Match score'}: {result.score ?? 'Not scored'} · {result.eligible ? 'Eligible' : 'Ineligible'} · Budget: {result.budget_status}</p>
-        <p>Estimated on-site cost: {cost ? `$${cost.min}–$${cost.max}` : 'Unavailable'}. Airfare is not verified.</p>
-        {[...result.reasons, ...result.tradeoffs].map((line, index) => <p key={index}>{line}</p>)}
-      </li>;
-    })}</ul>
-    {selected && <p role="status">Selected city: {selected.name}. Photo: {selected.image_url ? 'Available' : 'Unavailable'}.</p>}
-  </main>;
+
+  function changePreferences(next: TravelPreferences) {
+    activeRanking.current?.abort();
+    if (rerankTimer.current) clearTimeout(rerankTimer.current);
+    setRankingLoading(false);
+    setPreferences(next); setError(null);
+    if (searched) setStale(true);
+  }
+  function selectDestination(id: string) { setSelectedDestinationId(id); setNotice(null); }
+  function handleCountryClick(code: string | null, countryName: string) {
+    const supported = code ? destinations.filter(city => city.country_code === code) : [];
+    setCountryCities(supported);
+    if (!supported.length) { setNotice(`${countryName}: Not yet covered. WanderSphere only evaluates curated cities.`); return; }
+    setNotice(`${countryName}: ${supported.length} curated ${supported.length === 1 ? 'city' : 'cities'} available.`);
+  }
+
+  const selectedRecommendation = results.find(result => result.destination_id === selectedDestinationId) ?? null;
+  const budgetSummary = preferences.budget_usd === null ? 'Budget not set' : `$${preferences.budget_usd.toLocaleString()} ${preferences.budget_scope === 'total_trip' ? 'total-trip budget (airfare unverified)' : 'on-site budget'}`;
+  const sidebar = editing
+    ? <PreferencesPanel preferences={preferences} onChange={changePreferences} onSubmit={() => { void rank(preferences, true); }} submitDisabled={catalogLoading || !!catalogError || rankingLoading} submitLabel={rankingLoading ? 'Ranking…' : error ? 'Retry recommendations' : 'Find destinations'} />
+    : <section className="preference-summary" aria-label="Your preferences"><p className="eyebrow">Your trip</p><h2>Ready to explore</h2><p>{budgetSummary} · {preferences.duration_days === null ? 'Length undecided' : `${preferences.duration_days} days`}</p><p>{preferences.climate === 'any' ? 'Any climate' : `${preferences.climate} weather`} · {preferences.travel_month === null ? 'Month undecided' : monthName(preferences.travel_month)} · {preferences.interests.length ? preferences.interests.join(', ') : 'Any interests'}</p>{selectedDestinationId && <p>Selected city: {destinations.find(city => city.id === selectedDestinationId)?.name ?? selectedDestinationId}</p>}<button onClick={() => setEditing(true)}>Edit preferences</button></section>;
+
+  return <AppShell
+    notice={<>{demoMode && <aside role="note" className="demo-note"><strong>Development demo mode.</strong> Sample scores are invented. Controls do not recompute sample rankings.</aside>}{catalogLoading && <p role="status" className="banner">Loading curated cities…</p>}{catalogError && <p role="alert" className="banner error">{catalogError} <button onClick={() => setCatalogRetry(value => value + 1)}>Retry cities</button></p>}{notice && <p role="status" className="banner">{notice}</p>}{error && <p role="alert" className="banner error">{error} {searched && <button disabled={!!preferenceError(preferences)} onClick={() => { void rank(preferences, true); }}>Retry ranking</button>}</p>}{error && results.length > 0 && <p role="status" className="banner">Results are from previous preferences.</p>}{searched && stale && !error && <p role="status" className="banner">{preferenceError(preferences) ? 'Previous results retained. Correct invalid preferences to update.' : 'Results are updating for your latest preferences…'}</p>}</>}
+    sidebar={<>{sidebar}{!demoMode && <SearchPanel preferences={preferences} onParsed={next => { changePreferences(next); setEditing(true); }} />}{searched && <button className="banner" disabled={!results.some(result => result.eligible)} onClick={() => { const eligible = results.filter(result => result.eligible); const choice = eligible[Math.floor(Math.random() * eligible.length)]; if (choice) selectDestination(choice.destination_id); }}>Surprise Me</button>}</>}
+    globe={<><TravelGlobe destinations={destinations} results={results} selectedDestinationId={selectedDestinationId} onSelectDestination={selectDestination} onCountryClick={handleCountryClick} />{countryCities.length > 0 && <section className="banner" aria-label="Supported cities in selected country"><p>Supported cities</p>{countryCities.map(city => <button key={city.id} onClick={() => selectDestination(city.id)}>{city.name}</button>)}</section>}</>}
+    results={<RecommendationList destinations={destinations} results={results} selectedDestinationId={selectedDestinationId} onSelect={selectDestination} loading={rankingLoading} searched={searched} />}
+    details={<DestinationDetails destination={detail} recommendation={selectedRecommendation} loading={detailsLoading} error={detailError} travelMonth={preferences.travel_month} onClose={() => setSelectedDestinationId(null)} />}
+  />;
 }
+
+function monthName(month: number): string { return new Intl.DateTimeFormat('en', { month: 'long', timeZone: 'UTC' }).format(new Date(Date.UTC(2026, month - 1, 1))); }
 function message(cause: unknown): string { return cause instanceof Error ? cause.message : 'Something went wrong. Please retry.'; }

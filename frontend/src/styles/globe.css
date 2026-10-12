@@ -1,0 +1,9 @@
+.globe-wrap { position: relative; width: 100%; min-width: 0; min-height: 430px; display: grid; justify-items: center; align-items: center; overflow: hidden; border-radius: 28px; background: radial-gradient(circle at 50% 44%, rgba(27, 81, 165, .20), transparent 42%); }
+.globe-wrap canvas { cursor: grab; max-width: 100%; }
+.globe-wrap canvas:active { cursor: grabbing; }
+.globe-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; font-size: .75rem; color: #d9e7ff; }
+.globe-legend span { display: inline-flex; align-items: center; gap: 5px; }.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }.high{background:#f6c453}.mid{background:#5e9a8b}.gray{background:#98a8b9}.muted{background:#3f4d60}
+.coverage-note { margin: 8px 0 0; color: #9db1cf; text-align: center; font-size: .78rem; }
+.globe-label { padding: 5px 7px; color: #fff; background: rgba(4, 12, 28, .92); border: 1px solid rgba(152, 195, 255, .45); border-radius: 7px; font: 12px system-ui, sans-serif; }
+.details-drawer a { color: #a4d7ff; overflow-wrap: anywhere; }
+.details-drawer dl > div { display: flex; justify-content: space-between; }

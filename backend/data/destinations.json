@@ -11,7 +11,7 @@
       "culture",
       "nightlife"
     ],
-    "image_url": null,
+    "image_url": "/destination-photos/lisbon.jpg",
     "highlights": [
       "Belém Tower on the Tagus waterfront.",
       "Jerónimos Monastery in the Belém district."
@@ -30,11 +30,21 @@
       14,
       12
     ],
-    "lodging_per_night_usd": null,
-    "daily_ex_lodging_usd": null,
+    "lodging_per_night_usd": {
+      "min": 58,
+      "max": 144,
+      "source_url": "https://www.budgetyourtrip.com/portugal/lisbon",
+      "checked_at": "2026-10-11"
+    },
+    "daily_ex_lodging_usd": {
+      "min": 56,
+      "max": 138,
+      "source_url": "https://www.budgetyourtrip.com/portugal/lisbon",
+      "checked_at": "2026-10-11"
+    },
     "climate_source_url": "https://www.timeanddate.com/weather/portugal/lisbon/climate",
     "climate_checked_at": "2026-10-10",
-    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "cost_note": "Planning interval from reported budget-to-mid-range traveler averages, not minimum/maximum quotes or availability. Lodging doubles per-person double-occupancy costs as a solo full-room proxy; actual solo rates vary. Daily expenses sum food, local transport and entertainment. Excludes flights, intercity travel, alcohol, shopping, insurance and unverified taxes/fees. Seasonal prices and personal spending can fall outside this interval.",
     "_provenance": {
       "checked_at": "2026-10-10",
       "coordinate_source_url": "https://www.timeanddate.com/worldclock/portugal/lisbon",
@@ -63,7 +73,14 @@
         54
       ],
       "temperature_precision_note": "Whole Fahrenheit source values converted to whole Celsius to avoid false precision.",
-      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models.",
+      "photo": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Lisbon_Skyline_(45684560521).jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "author": "Neil",
+        "checked_at": "2026-10-11"
+      }
     }
   },
   {
@@ -78,7 +95,7 @@
       "culture",
       "nature"
     ],
-    "image_url": null,
+    "image_url": "/destination-photos/kyoto.jpg",
     "highlights": [
       "Fushimi Inari Taisha shrine and its vermilion gates.",
       "Kiyomizu-dera temple overlooking Kyoto."
@@ -97,11 +114,21 @@
       12.5,
       7.2
     ],
-    "lodging_per_night_usd": null,
-    "daily_ex_lodging_usd": null,
+    "lodging_per_night_usd": {
+      "min": 50,
+      "max": 122,
+      "source_url": "https://testing.budgetyourtrip.com/japan/kyoto",
+      "checked_at": "2026-10-11"
+    },
+    "daily_ex_lodging_usd": {
+      "min": 24,
+      "max": 60,
+      "source_url": "https://testing.budgetyourtrip.com/japan/kyoto",
+      "checked_at": "2026-10-11"
+    },
     "climate_source_url": "https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_ym.php?prec_no=61&block_no=47759&year=&month=&day=&view=",
     "climate_checked_at": "2026-10-10",
-    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "cost_note": "Planning interval from reported budget-to-mid-range traveler averages, not minimum/maximum quotes or availability. Lodging doubles per-person double-occupancy costs as a solo full-room proxy; actual solo rates vary. Daily expenses sum food, local transport and entertainment. Excludes flights, intercity travel, alcohol, shopping, insurance and unverified taxes/fees. Seasonal prices and personal spending can fall outside this interval.",
     "_provenance": {
       "checked_at": "2026-10-10",
       "coordinate_source_url": "https://www.timeanddate.com/worldclock/japan/kyoto",
@@ -130,7 +157,14 @@
         7.2
       ],
       "temperature_precision_note": "Celsius values retained at source precision.",
-      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models.",
+      "photo": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kiyomizu-dera,_Kyoto,_November_2016_-07.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "author": "Martin Falbisoner",
+        "checked_at": "2026-10-11"
+      }
     }
   },
   {
@@ -145,7 +179,7 @@
       "food",
       "nightlife"
     ],
-    "image_url": null,
+    "image_url": "/destination-photos/cancun.jpg",
     "highlights": [
       "Playa Delfines in the Hotel Zone.",
       "Chac Mool public beach on Kukulkán Boulevard."
@@ -164,11 +198,21 @@
       24,
       23
     ],
-    "lodging_per_night_usd": null,
-    "daily_ex_lodging_usd": null,
+    "lodging_per_night_usd": {
+      "min": 70,
+      "max": 180,
+      "source_url": "https://www.budgetyourtrip.com/mexico/cancun",
+      "checked_at": "2026-10-11"
+    },
+    "daily_ex_lodging_usd": {
+      "min": 35,
+      "max": 93,
+      "source_url": "https://www.budgetyourtrip.com/mexico/cancun",
+      "checked_at": "2026-10-11"
+    },
     "climate_source_url": "https://www.timeanddate.com/weather/mexico/cancun/climate",
     "climate_checked_at": "2026-10-10",
-    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "cost_note": "Planning interval from reported budget-to-mid-range traveler averages, not minimum/maximum quotes or availability. Lodging doubles per-person double-occupancy costs as a solo full-room proxy; actual solo rates vary. Daily expenses sum food, local transport and entertainment. Excludes flights, intercity travel, alcohol, shopping, insurance and unverified taxes/fees. Seasonal prices and personal spending can fall outside this interval.",
     "_provenance": {
       "checked_at": "2026-10-10",
       "coordinate_source_url": "https://www.timeanddate.com/worldclock/mexico/cancun",
@@ -197,7 +241,14 @@
         74
       ],
       "temperature_precision_note": "Whole Fahrenheit source values converted to whole Celsius to avoid false precision.",
-      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models.",
+      "photo": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Playa_Delfines_(12916929323).jpg",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "author": "David Stanley from Nanaimo, Canada",
+        "checked_at": "2026-10-11"
+      }
     }
   },
   {
@@ -212,7 +263,7 @@
       "adventure",
       "culture"
     ],
-    "image_url": null,
+    "image_url": "/destination-photos/reykjavik.jpg",
     "highlights": [
       "Harpa concert hall on the downtown waterfront.",
       "Hallgrímskirkja church in central Reykjavík."
@@ -231,11 +282,21 @@
       2,
       1
     ],
-    "lodging_per_night_usd": null,
-    "daily_ex_lodging_usd": null,
+    "lodging_per_night_usd": {
+      "min": 106,
+      "max": 320,
+      "source_url": "https://www.budgetyourtrip.com/iceland/reykjavik",
+      "checked_at": "2026-10-11"
+    },
+    "daily_ex_lodging_usd": {
+      "min": 77,
+      "max": 195,
+      "source_url": "https://www.budgetyourtrip.com/iceland/reykjavik",
+      "checked_at": "2026-10-11"
+    },
     "climate_source_url": "https://www.timeanddate.com/weather/iceland/reykjavik/climate",
     "climate_checked_at": "2026-10-10",
-    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "cost_note": "Planning interval from reported budget-to-mid-range traveler averages, not minimum/maximum quotes or availability. Lodging doubles per-person double-occupancy costs as a solo full-room proxy; actual solo rates vary. Daily expenses sum food, local transport and entertainment. Excludes flights, intercity travel, alcohol, shopping, insurance and unverified taxes/fees. Seasonal prices and personal spending can fall outside this interval.",
     "_provenance": {
       "checked_at": "2026-10-10",
       "coordinate_source_url": "https://www.timeanddate.com/worldclock/iceland/reykjavik",
@@ -264,7 +325,14 @@
         34
       ],
       "temperature_precision_note": "Whole Fahrenheit source values converted to whole Celsius to avoid false precision.",
-      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models.",
+      "photo": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Reykjavik_skyline_RVG.JPG",
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0",
+        "author": "Reyndeer",
+        "checked_at": "2026-10-11"
+      }
     }
   },
   {
@@ -279,7 +347,7 @@
       "beaches",
       "food"
     ],
-    "image_url": null,
+    "image_url": "/destination-photos/barcelona.jpg",
     "highlights": [
       "Park Güell and its architectural landscape.",
       "Sagrada Família basilica in Barcelona."
@@ -298,11 +366,21 @@
       13,
       11
     ],
-    "lodging_per_night_usd": null,
-    "daily_ex_lodging_usd": null,
+    "lodging_per_night_usd": {
+      "min": 80,
+      "max": 212,
+      "source_url": "https://testing.budgetyourtrip.com/spain/barcelona",
+      "checked_at": "2026-10-11"
+    },
+    "daily_ex_lodging_usd": {
+      "min": 50,
+      "max": 127,
+      "source_url": "https://testing.budgetyourtrip.com/spain/barcelona",
+      "checked_at": "2026-10-11"
+    },
     "climate_source_url": "https://www.timeanddate.com/weather/spain/barcelona/climate",
     "climate_checked_at": "2026-10-10",
-    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "cost_note": "Planning interval from reported budget-to-mid-range traveler averages, not minimum/maximum quotes or availability. Lodging doubles per-person double-occupancy costs as a solo full-room proxy; actual solo rates vary. Daily expenses sum food, local transport and entertainment. Excludes flights, intercity travel, alcohol, shopping, insurance and unverified taxes/fees. Seasonal prices and personal spending can fall outside this interval.",
     "_provenance": {
       "checked_at": "2026-10-10",
       "coordinate_source_url": "https://www.timeanddate.com/worldclock/spain/barcelona",
@@ -331,7 +409,14 @@
         51
       ],
       "temperature_precision_note": "Whole Fahrenheit source values converted to whole Celsius to avoid false precision.",
-      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models.",
+      "photo": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Skyline_Barcelona,_December_2025.jpg",
+        "license": "CC0",
+        "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "author": "Hstoops",
+        "checked_at": "2026-10-11"
+      }
     }
   },
   {
@@ -346,7 +431,7 @@
       "culture",
       "nightlife"
     ],
-    "image_url": null,
+    "image_url": "/destination-photos/bangkok.jpg",
     "highlights": [
       "The Grand Palace complex in Bangkok.",
       "Wat Arun, the Temple of Dawn."
@@ -365,11 +450,21 @@
       29,
       27
     ],
-    "lodging_per_night_usd": null,
-    "daily_ex_lodging_usd": null,
+    "lodging_per_night_usd": {
+      "min": 36,
+      "max": 96,
+      "source_url": "https://www.budgetyourtrip.com/thailand/bangkok",
+      "checked_at": "2026-10-11"
+    },
+    "daily_ex_lodging_usd": {
+      "min": 21,
+      "max": 57,
+      "source_url": "https://www.budgetyourtrip.com/thailand/bangkok",
+      "checked_at": "2026-10-11"
+    },
     "climate_source_url": "https://www.timeanddate.com/weather/thailand/bangkok/climate",
     "climate_checked_at": "2026-10-10",
-    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "cost_note": "Planning interval from reported budget-to-mid-range traveler averages, not minimum/maximum quotes or availability. Lodging doubles per-person double-occupancy costs as a solo full-room proxy; actual solo rates vary. Daily expenses sum food, local transport and entertainment. Excludes flights, intercity travel, alcohol, shopping, insurance and unverified taxes/fees. Seasonal prices and personal spending can fall outside this interval.",
     "_provenance": {
       "checked_at": "2026-10-10",
       "coordinate_source_url": "https://www.timeanddate.com/worldclock/thailand/bangkok",
@@ -397,7 +492,14 @@
         27
       ],
       "temperature_precision_note": "Celsius values retained at source precision.",
-      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models.",
+      "photo": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bangkok_skytrain_sunset.jpg",
+        "license": "CC BY-SA 3.0",
+        "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "author": "User:Diliff",
+        "checked_at": "2026-10-11"
+      }
     }
   },
   {
@@ -412,7 +514,7 @@
       "nature",
       "culture"
     ],
-    "image_url": null,
+    "image_url": "/destination-photos/singapore.jpg",
     "highlights": [
       "Gardens by the Bay in downtown Singapore.",
       "Singapore Botanic Gardens and its National Orchid Garden."
@@ -431,11 +533,21 @@
       28,
       28
     ],
-    "lodging_per_night_usd": null,
-    "daily_ex_lodging_usd": null,
+    "lodging_per_night_usd": {
+      "min": 76,
+      "max": 204,
+      "source_url": "https://www.budgetyourtrip.com/Singapore",
+      "checked_at": "2026-10-11"
+    },
+    "daily_ex_lodging_usd": {
+      "min": 36.31,
+      "max": 93,
+      "source_url": "https://www.budgetyourtrip.com/Singapore",
+      "checked_at": "2026-10-11"
+    },
     "climate_source_url": "https://www.timeanddate.com/weather/singapore/singapore/climate",
     "climate_checked_at": "2026-10-10",
-    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "cost_note": "Planning interval from reported budget-to-mid-range traveler averages, not minimum/maximum quotes or availability. Lodging doubles per-person double-occupancy costs as a solo full-room proxy; actual solo rates vary. Daily expenses sum food, local transport and entertainment. Excludes flights, intercity travel, alcohol, shopping, insurance and unverified taxes/fees. Seasonal prices and personal spending can fall outside this interval.",
     "_provenance": {
       "checked_at": "2026-10-10",
       "coordinate_source_url": "https://www.timeanddate.com/worldclock/singapore/singapore",
@@ -464,7 +576,14 @@
         28
       ],
       "temperature_precision_note": "Celsius values retained at source precision.",
-      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models.",
+      "photo": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Singapore_Marina_Bay_Dusk_2018-02-27.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "author": "Benh LIEU SONG (Flickr)",
+        "checked_at": "2026-10-11"
+      }
     }
   },
   {
@@ -479,7 +598,7 @@
       "nature",
       "adventure"
     ],
-    "image_url": null,
+    "image_url": "/destination-photos/cape-town.jpg",
     "highlights": [
       "Table Mountain overlooking Cape Town.",
       "Kirstenbosch National Botanical Garden."
@@ -498,11 +617,21 @@
       19,
       21
     ],
-    "lodging_per_night_usd": null,
-    "daily_ex_lodging_usd": null,
+    "lodging_per_night_usd": {
+      "min": 56,
+      "max": 174,
+      "source_url": "https://www.budgetyourtrip.com/south-africa/cape-town",
+      "checked_at": "2026-10-11"
+    },
+    "daily_ex_lodging_usd": {
+      "min": 79,
+      "max": 125,
+      "source_url": "https://www.budgetyourtrip.com/south-africa/cape-town",
+      "checked_at": "2026-10-11"
+    },
     "climate_source_url": "https://www.timeanddate.com/weather/south-africa/cape-town/climate",
     "climate_checked_at": "2026-10-10",
-    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "cost_note": "Planning interval from reported budget-to-mid-range traveler averages, not minimum/maximum quotes or availability. Lodging doubles per-person double-occupancy costs as a solo full-room proxy; actual solo rates vary. Daily expenses sum food, local transport and entertainment. Excludes flights, intercity travel, alcohol, shopping, insurance and unverified taxes/fees. Seasonal prices and personal spending can fall outside this interval.",
     "_provenance": {
       "checked_at": "2026-10-10",
       "coordinate_source_url": "https://www.timeanddate.com/worldclock/south-africa/cape-town",
@@ -530,7 +659,14 @@
         21
       ],
       "temperature_precision_note": "Celsius values retained at source precision.",
-      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models.",
+      "photo": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cape_Town_City_Bowl_and_Table_Mountain_at_dawn.jpg",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "author": "Daniel Case",
+        "checked_at": "2026-10-11"
+      }
     }
   },
   {
@@ -544,7 +680,7 @@
       "culture",
       "food"
     ],
-    "image_url": null,
+    "image_url": "/destination-photos/marrakech.jpg",
     "highlights": [
       "The historic medina of Marrakech.",
       "Jardin Majorelle in Marrakech."
@@ -563,11 +699,21 @@
       17,
       14
     ],
-    "lodging_per_night_usd": null,
-    "daily_ex_lodging_usd": null,
+    "lodging_per_night_usd": {
+      "min": 42,
+      "max": 114,
+      "source_url": "https://www.budgetyourtrip.com/morocco/marrakesh",
+      "checked_at": "2026-10-11"
+    },
+    "daily_ex_lodging_usd": {
+      "min": 21,
+      "max": 52,
+      "source_url": "https://www.budgetyourtrip.com/morocco/marrakesh",
+      "checked_at": "2026-10-11"
+    },
     "climate_source_url": "https://www.timeanddate.com/weather/morocco/marrakech/climate",
     "climate_checked_at": "2026-10-10",
-    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "cost_note": "Planning interval from reported budget-to-mid-range traveler averages, not minimum/maximum quotes or availability. Lodging doubles per-person double-occupancy costs as a solo full-room proxy; actual solo rates vary. Daily expenses sum food, local transport and entertainment. Excludes flights, intercity travel, alcohol, shopping, insurance and unverified taxes/fees. Seasonal prices and personal spending can fall outside this interval.",
     "_provenance": {
       "checked_at": "2026-10-10",
       "coordinate_source_url": "https://www.timeanddate.com/worldclock/morocco/marrakech",
@@ -596,7 +742,14 @@
         14
       ],
       "temperature_precision_note": "Celsius values retained at source precision.",
-      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models.",
+      "photo": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Mosqu%C3%A9e_de_la_Koutoubia_-_marakesh.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "author": "Baca12",
+        "checked_at": "2026-10-11"
+      }
     }
   },
   {
@@ -611,7 +764,7 @@
       "adventure",
       "food"
     ],
-    "image_url": null,
+    "image_url": "/destination-photos/vancouver.jpg",
     "highlights": [
       "Stanley Park and its walking trails.",
       "Granville Island Public Market."
@@ -630,11 +783,21 @@
       7,
       4
     ],
-    "lodging_per_night_usd": null,
-    "daily_ex_lodging_usd": null,
+    "lodging_per_night_usd": {
+      "min": 60,
+      "max": 168,
+      "source_url": "https://www.budgetyourtrip.com/canada/vancouver",
+      "checked_at": "2026-10-11"
+    },
+    "daily_ex_lodging_usd": {
+      "min": 36,
+      "max": 101,
+      "source_url": "https://www.budgetyourtrip.com/canada/vancouver",
+      "checked_at": "2026-10-11"
+    },
     "climate_source_url": "https://www.timeanddate.com/weather/canada/vancouver/climate",
     "climate_checked_at": "2026-10-10",
-    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "cost_note": "Planning interval from reported budget-to-mid-range traveler averages, not minimum/maximum quotes or availability. Lodging doubles per-person double-occupancy costs as a solo full-room proxy; actual solo rates vary. Daily expenses sum food, local transport and entertainment. Excludes flights, intercity travel, alcohol, shopping, insurance and unverified taxes/fees. Seasonal prices and personal spending can fall outside this interval.",
     "_provenance": {
       "checked_at": "2026-10-10",
       "coordinate_source_url": "https://www.timeanddate.com/worldclock/canada/vancouver",
@@ -663,7 +826,14 @@
         39
       ],
       "temperature_precision_note": "Whole Fahrenheit source values converted to whole Celsius to avoid false precision.",
-      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models.",
+      "photo": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Vancouver_dusk_pano.jpg",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "author": "Mfield, Matthew Field, http://www.photography.mattfield.com",
+        "checked_at": "2026-10-11"
+      }
     }
   },
   {
@@ -678,7 +848,7 @@
       "nightlife",
       "nature"
     ],
-    "image_url": null,
+    "image_url": "/destination-photos/rio-de-janeiro.jpg",
     "highlights": [
       "Christ the Redeemer on Corcovado.",
       "Sugarloaf Mountain overlooking the city and bay."
@@ -697,11 +867,21 @@
       25,
       26
     ],
-    "lodging_per_night_usd": null,
-    "daily_ex_lodging_usd": null,
+    "lodging_per_night_usd": {
+      "min": 50,
+      "max": 130,
+      "source_url": "https://www.budgetyourtrip.com/brazil/rio-de-janeiro",
+      "checked_at": "2026-10-11"
+    },
+    "daily_ex_lodging_usd": {
+      "min": 24,
+      "max": 63,
+      "source_url": "https://www.budgetyourtrip.com/brazil/rio-de-janeiro",
+      "checked_at": "2026-10-11"
+    },
     "climate_source_url": "https://www.timeanddate.com/weather/brazil/rio-de-janeiro/climate",
     "climate_checked_at": "2026-10-10",
-    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "cost_note": "Planning interval from reported budget-to-mid-range traveler averages, not minimum/maximum quotes or availability. Lodging doubles per-person double-occupancy costs as a solo full-room proxy; actual solo rates vary. Daily expenses sum food, local transport and entertainment. Excludes flights, intercity travel, alcohol, shopping, insurance and unverified taxes/fees. Seasonal prices and personal spending can fall outside this interval.",
     "_provenance": {
       "checked_at": "2026-10-10",
       "coordinate_source_url": "https://www.timeanddate.com/worldclock/brazil/rio-de-janeiro",
@@ -729,7 +909,14 @@
         26
       ],
       "temperature_precision_note": "Celsius values retained at source precision.",
-      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models.",
+      "photo": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Rio-panorama-Botafogo-Sugarloaf.jpg",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0",
+        "author": "Acediscovery",
+        "checked_at": "2026-10-11"
+      }
     }
   },
   {
@@ -744,7 +931,7 @@
       "nature",
       "adventure"
     ],
-    "image_url": null,
+    "image_url": "/destination-photos/punta-cana.jpg",
     "highlights": [
       "Bávaro Beach in the Punta Cana resort region.",
       "Ojos Indígenas ecological reserve with nature trails and freshwater springs."
@@ -763,11 +950,21 @@
       26,
       26
     ],
-    "lodging_per_night_usd": null,
-    "daily_ex_lodging_usd": null,
+    "lodging_per_night_usd": {
+      "min": 80,
+      "max": 198,
+      "source_url": "https://www.budgetyourtrip.com/dominican-republic/punta-cana",
+      "checked_at": "2026-10-11"
+    },
+    "daily_ex_lodging_usd": {
+      "min": 42,
+      "max": 105,
+      "source_url": "https://www.budgetyourtrip.com/dominican-republic/punta-cana",
+      "checked_at": "2026-10-11"
+    },
     "climate_source_url": "https://www.timeanddate.com/weather/dominican-republic/punta-cana/climate",
     "climate_checked_at": "2026-10-10",
-    "cost_note": "No verified on-site cost estimates are available. Airfare is not included or verified.",
+    "cost_note": "Planning interval from reported budget-to-mid-range traveler averages, not minimum/maximum quotes or availability. Lodging doubles per-person double-occupancy costs as a solo full-room proxy; actual solo rates vary. Daily expenses sum food, local transport and entertainment. Excludes flights, intercity travel, alcohol, shopping, insurance and unverified taxes/fees. Seasonal prices and personal spending can fall outside this interval.",
     "_provenance": {
       "checked_at": "2026-10-10",
       "coordinate_source_url": "https://www.timeanddate.com/worldclock/dominican-republic/punta-cana",
@@ -796,7 +993,14 @@
         26
       ],
       "temperature_precision_note": "Celsius values retained at source precision.",
-      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models."
+      "metadata_note": "Internal sourcing metadata; excluded from API responses by the existing Pydantic models.",
+      "photo": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:2023_-_Playa_Bavaro_Punta_Cana_-_01.jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "author": "Oleg Yunakov",
+        "checked_at": "2026-10-11"
+      }
     }
   }
 ]

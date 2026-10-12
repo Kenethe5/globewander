@@ -90,7 +90,8 @@ class ScoringTests(unittest.TestCase):
 
     def test_missing_costs_and_total_trip_budget_are_unverified(self) -> None:
         no_costs = score_budget(
-            TravelPreferences(budget_usd=1500, duration_days=5), self.lisbon
+            TravelPreferences(budget_usd=1500, duration_days=5),
+            self.lisbon.model_copy(update={'lodging_per_night_usd': None, 'daily_ex_lodging_usd': None})
         )
         total_trip = score_budget(
             TravelPreferences(
